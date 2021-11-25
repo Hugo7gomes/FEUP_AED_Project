@@ -8,15 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/jpedr/AED/Project/main.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.obj"
-  "C:/Users/jpedr/AED/Project/src/avião.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/src/avião.cpp.obj"
-  "C:/Users/jpedr/AED/Project/src/bilhete.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/src/bilhete.cpp.obj"
-  "C:/Users/jpedr/AED/Project/src/passageiro.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/src/passageiro.cpp.obj"
-  "C:/Users/jpedr/AED/Project/src/serviço.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/src/serviço.cpp.obj"
-  "C:/Users/jpedr/AED/Project/src/transpTerrestre.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/src/transpTerrestre.cpp.obj"
-  "C:/Users/jpedr/AED/Project/src/voo.cpp" "C:/Users/jpedr/AED/Project/cmake-build-debug/CMakeFiles/Project.dir/src/voo.cpp.obj"
+  "D:/projeto_AED/AED_Project/main.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/main.cpp.obj"
+  "D:/projeto_AED/AED_Project/src/avião.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/src/avião.cpp.obj"
+  "D:/projeto_AED/AED_Project/src/bilhete.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/src/bilhete.cpp.obj"
+  "D:/projeto_AED/AED_Project/src/passageiro.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/src/passageiro.cpp.obj"
+  "D:/projeto_AED/AED_Project/src/serviço.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/src/serviço.cpp.obj"
+  "D:/projeto_AED/AED_Project/src/transpTerrestre.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/src/transpTerrestre.cpp.obj"
+  "D:/projeto_AED/AED_Project/src/voo.cpp" "D:/projeto_AED/AED_Project/cmake-build-debug/CMakeFiles/Project.dir/src/voo.cpp.obj"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "MSVC")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

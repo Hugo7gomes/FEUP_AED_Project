@@ -8,8 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Project.dir/src/voo.cpp.obj"
   "Project.exe"
   "Project.exe.manifest"
+  "Project.lib"
   "Project.pdb"
-  "libProject.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
