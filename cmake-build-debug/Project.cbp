@@ -83,6 +83,45 @@
 		<Unit filename="C:/Users/jpedr/AED/Project/main.cpp">
 			<Option target="Project"/>
 		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/avião.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/avião.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/bilhete.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/bilhete.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/defs.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/passageiro.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/passageiro.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/serviço.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/serviço.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/transpTerrestre.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/transpTerrestre.h">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/voo.cpp">
+			<Option target="Project"/>
+		</Unit>
+		<Unit filename="C:/Users/jpedr/AED/Project/src/voo.h">
+			<Option target="Project"/>
+		</Unit>
 		<Unit filename="C:/Users/jpedr/AED/Project/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

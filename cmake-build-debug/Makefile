@@ -152,6 +152,150 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/avião.obj: src/avião.cpp.obj
+.PHONY : src/avião.obj
+
+# target to build an object file
+src/avião.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/avião.cpp.obj
+.PHONY : src/avião.cpp.obj
+
+src/avião.i: src/avião.cpp.i
+.PHONY : src/avião.i
+
+# target to preprocess a source file
+src/avião.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/avião.cpp.i
+.PHONY : src/avião.cpp.i
+
+src/avião.s: src/avião.cpp.s
+.PHONY : src/avião.s
+
+# target to generate assembly for a file
+src/avião.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/avião.cpp.s
+.PHONY : src/avião.cpp.s
+
+src/bilhete.obj: src/bilhete.cpp.obj
+.PHONY : src/bilhete.obj
+
+# target to build an object file
+src/bilhete.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/bilhete.cpp.obj
+.PHONY : src/bilhete.cpp.obj
+
+src/bilhete.i: src/bilhete.cpp.i
+.PHONY : src/bilhete.i
+
+# target to preprocess a source file
+src/bilhete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/bilhete.cpp.i
+.PHONY : src/bilhete.cpp.i
+
+src/bilhete.s: src/bilhete.cpp.s
+.PHONY : src/bilhete.s
+
+# target to generate assembly for a file
+src/bilhete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/bilhete.cpp.s
+.PHONY : src/bilhete.cpp.s
+
+src/passageiro.obj: src/passageiro.cpp.obj
+.PHONY : src/passageiro.obj
+
+# target to build an object file
+src/passageiro.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/passageiro.cpp.obj
+.PHONY : src/passageiro.cpp.obj
+
+src/passageiro.i: src/passageiro.cpp.i
+.PHONY : src/passageiro.i
+
+# target to preprocess a source file
+src/passageiro.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/passageiro.cpp.i
+.PHONY : src/passageiro.cpp.i
+
+src/passageiro.s: src/passageiro.cpp.s
+.PHONY : src/passageiro.s
+
+# target to generate assembly for a file
+src/passageiro.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/passageiro.cpp.s
+.PHONY : src/passageiro.cpp.s
+
+src/serviço.obj: src/serviço.cpp.obj
+.PHONY : src/serviço.obj
+
+# target to build an object file
+src/serviço.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/serviço.cpp.obj
+.PHONY : src/serviço.cpp.obj
+
+src/serviço.i: src/serviço.cpp.i
+.PHONY : src/serviço.i
+
+# target to preprocess a source file
+src/serviço.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/serviço.cpp.i
+.PHONY : src/serviço.cpp.i
+
+src/serviço.s: src/serviço.cpp.s
+.PHONY : src/serviço.s
+
+# target to generate assembly for a file
+src/serviço.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/serviço.cpp.s
+.PHONY : src/serviço.cpp.s
+
+src/transpTerrestre.obj: src/transpTerrestre.cpp.obj
+.PHONY : src/transpTerrestre.obj
+
+# target to build an object file
+src/transpTerrestre.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/transpTerrestre.cpp.obj
+.PHONY : src/transpTerrestre.cpp.obj
+
+src/transpTerrestre.i: src/transpTerrestre.cpp.i
+.PHONY : src/transpTerrestre.i
+
+# target to preprocess a source file
+src/transpTerrestre.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/transpTerrestre.cpp.i
+.PHONY : src/transpTerrestre.cpp.i
+
+src/transpTerrestre.s: src/transpTerrestre.cpp.s
+.PHONY : src/transpTerrestre.s
+
+# target to generate assembly for a file
+src/transpTerrestre.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/transpTerrestre.cpp.s
+.PHONY : src/transpTerrestre.cpp.s
+
+src/voo.obj: src/voo.cpp.obj
+.PHONY : src/voo.obj
+
+# target to build an object file
+src/voo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/voo.cpp.obj
+.PHONY : src/voo.cpp.obj
+
+src/voo.i: src/voo.cpp.i
+.PHONY : src/voo.i
+
+# target to preprocess a source file
+src/voo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/voo.cpp.i
+.PHONY : src/voo.cpp.i
+
+src/voo.s: src/voo.cpp.s
+.PHONY : src/voo.s
+
+# target to generate assembly for a file
+src/voo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Project.dir\build.make CMakeFiles/Project.dir/src/voo.cpp.s
+.PHONY : src/voo.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -164,6 +308,24 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... src/avião.obj
+	@echo ... src/avião.i
+	@echo ... src/avião.s
+	@echo ... src/bilhete.obj
+	@echo ... src/bilhete.i
+	@echo ... src/bilhete.s
+	@echo ... src/passageiro.obj
+	@echo ... src/passageiro.i
+	@echo ... src/passageiro.s
+	@echo ... src/serviço.obj
+	@echo ... src/serviço.i
+	@echo ... src/serviço.s
+	@echo ... src/transpTerrestre.obj
+	@echo ... src/transpTerrestre.i
+	@echo ... src/transpTerrestre.s
+	@echo ... src/voo.obj
+	@echo ... src/voo.i
+	@echo ... src/voo.s
 .PHONY : help
 
 
