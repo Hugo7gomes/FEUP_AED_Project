@@ -1,0 +1,44 @@
+git@github.com:up202005035/AED_Project.git
+
+Class avião:
+string matrícula (A310)
+int capacidade // max
+list<voo> planoVoo
+
+Class voo:
+int numVoo
+int lotação //num de lugares ocupados
+Data dataPartida
+Data/Tempo duraçãoVoo
+string origem,destino
+list<bilhete> bilhetes
+
+Class serviço:
+string tipoServiço
+Data data
+string funcResponsavel
+
+Serviços a realizar -> guardar em fila
+Serviços realizados -> guardar em qualquer coisa
+
+Class passageiro:
+string Nome
+
+Class bilhete:
+passageiro p
+voo v
+bool bagagem
+//incluir aquisição de conjunto de bilhetes
+
+//Embarque check in automatico 
+
+Class transporteTerrestre:
+string tipoTransporte  (metro, autocarro, comboio)
+float distância
+Data horário
+
+os transportes terrestres -> guardar numa arvore binaria de pesquisa
+
+
+
+
