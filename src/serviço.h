@@ -4,6 +4,7 @@
 #include "defs.h"
 
 class serviço {
+    string tipoServiço;
 
 };
 
