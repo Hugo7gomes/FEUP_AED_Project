@@ -4,7 +4,9 @@
 #include "defs.h"
 
 class transpTerrestre {
-
+    string tipoTransporte;
+    float distância;
+    //Data horário;
 };
 
 

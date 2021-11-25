@@ -16,7 +16,9 @@ using  namespace  std;
 #include <sstream>
 #include <time.h>
 #include <conio.h>
-
+#include <list>
+#include <queue>
+#include <stack>
 
 
 

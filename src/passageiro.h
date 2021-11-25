@@ -4,7 +4,7 @@
 #include "defs.h"
 
 class passageiro {
-
+    string Nome;
 };
 
 

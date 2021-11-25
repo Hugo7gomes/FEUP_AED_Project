@@ -5,6 +5,8 @@
 
 class serviço {
     string tipoServiço;
+    //Data data
+    string funcResponsavel;
 
 };
 
