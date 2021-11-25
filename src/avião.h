@@ -6,7 +6,7 @@
 
 class avião {
     string matricula;
-    int capacidade; 
+    int capacidade;
 
 };
 
