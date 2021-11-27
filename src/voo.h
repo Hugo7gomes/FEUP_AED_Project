@@ -6,12 +6,21 @@
 
 class Voo {
     int numVoo;
-    int lotação;
-    //Data dataPartida;
-    //Data duraçãoVoo
+    int lotacao;
+    tm dataPartida;
+    tm duracaoVoo;
     string origem,destino;
-    list<bilhete> bilhetes;
-
+    list<Bilhete> bilhetes;
+public:
+    Voo(int n, int lot, struct tm dPartida, struct tm durVoo, string orig, string dest, list<Bilhete> tickets);
+    int getNumVoo() const;
+    int getLotacao() const;
+    tm getDataPartida() const;
+    tm getDuracaoVoo() const;
+    string getOrigem() const;
+    string getDestino() const;
+    list<Bilhete> getBilhetes() const;
+    void addBilhete(Bilhete b);
 };
 
 
