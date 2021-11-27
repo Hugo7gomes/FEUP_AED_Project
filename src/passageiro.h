@@ -3,7 +3,7 @@
 
 #include "defs.h"
 
-class passageiro {
+class Passageiro {
     string Nome;
 };
 

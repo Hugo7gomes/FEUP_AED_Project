@@ -5,11 +5,16 @@
 #include "voo.h"
 #include "passageiro.h"
 
-class bilhete {
-    passageiro p;
-    voo v;
-    bool bagagem;
-
+class Bilhete {
+    Passageiro passageiro;
+    Voo voo;
+    bool bagagemAuto;
+public:
+    Bilhete(Passageiro p , Voo v);
+    Passageiro getPassageiro() const;
+    Voo getVoo() const;
+    bool getBagagenAuto() const;
+    void setBagagemAuto();
 };
 
 

@@ -14,7 +14,7 @@ using  namespace  std;
 #include <iterator>
 #include <algorithm>
 #include <sstream>
-#include <time.h>
+//#include <ctime>
 #include <conio.h>
 #include <list>
 #include <queue>

@@ -4,7 +4,7 @@
 #include "defs.h"
 #include "bilhete.h"
 
-class voo {
+class Voo {
     int numVoo;
     int lotação;
     //Data dataPartida;

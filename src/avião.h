@@ -5,11 +5,17 @@
 #include "voo.h"
 
 
-class avião {
-    string matricula;
-    int capacidade;
-    list<voo> planoVoo;
 
+class Aviao {
+    string const matricula;
+    int const capacidade;
+    list<voo> planoVoo;
+public:
+    Aviao(string m, int c, list<voo> planoVoo);
+    int getCapacidade() const;
+    string getMatricula() const;
+    list<voo> getPlanoVoo() const;
+    void addVoo(voo v);
 };
 
 

@@ -5,8 +5,9 @@
 
 class serviço {
     string tipoServiço;
-    //Data data
+    struct tm data;
     string funcResponsavel;
+
 
 };
 
