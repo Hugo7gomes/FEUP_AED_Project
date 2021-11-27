@@ -3,3 +3,45 @@
 //
 
 #include "voo.h"
+
+Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest, list<Bilhete> tickets) {
+    numVoo = n;
+    lotacao = lot;
+    dataPartida = dPartida;
+    origem = orig;
+    destino = dest;
+    bilhetes = tickets;
+}
+
+
+int Voo::getNumVoo() const {
+    return numVoo;
+}
+
+int Voo::getLotacao() const {
+    return lotacao;
+}
+
+tm Voo::getDataPartida() const {
+    return dataPartida;
+}
+
+tm Voo::getDuracaoVoo() const {
+    return duracaoVoo;
+}
+
+string Voo::getOrigem() const {
+    return origem;
+}
+
+string Voo::getDestino() const {
+    return destino;
+}
+
+list <Bilhete> Voo::getBilhetes() const {
+    return bilhetes;
+}
+
+void Voo::addBilhete(Bilhete b) {
+    bilhetes.push_back(b);
+}

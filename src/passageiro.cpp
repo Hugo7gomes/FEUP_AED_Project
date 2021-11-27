@@ -3,3 +3,21 @@
 //
 
 #include "passageiro.h"
+
+Passageiro::Passageiro(string n, char sex, int i, int cc):nome(n), sex(sex), idade(i), CC(cc) {}
+
+string Passageiro::getNome() const {
+    return nome;
+}
+
+char Passageiro::getSex() const {
+    return sex;
+}
+
+int Passageiro::getIdade() const {
+    return idade;
+}
+
+int Passageiro::getCC() const {
+    return CC;
+}
