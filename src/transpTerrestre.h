@@ -3,10 +3,16 @@
 
 #include "defs.h"
 
-class transpTerrestre {
+class TranspTerrestre {
     string tipoTransporte;
-    float distância;
-    //Data horário;
+    float distancia;
+    tm horario;
+
+public:
+    TranspTerrestre(string tipoT, float d, tm h);
+    string getTipoTransporte() const;
+    float getDistancia() const;
+    tm getHorario() const;
 };
 
 

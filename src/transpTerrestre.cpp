@@ -3,3 +3,17 @@
 //
 
 #include "transpTerrestre.h"
+
+TranspTerrestre::TranspTerrestre(string tipoT, float d, tm h) : tipoTransporte(tipoT), distancia(d) {
+    horario = h;
+}
+
+string TranspTerrestre::getTipoTransporte() const {
+    return tipoTransporte;
+}
+
+float TranspTerrestre::getDistancia() const {
+    return distancia;
+}
+
+

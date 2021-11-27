@@ -9,13 +9,13 @@
 class Aviao {
     string const matricula;
     int const capacidade;
-    list<voo> planoVoo;
+    list<Voo> planoVoo;
 public:
-    Aviao(string m, int c, list<voo> planoVoo);
+    Aviao(string m, int c, list<Voo> planoVoo);
     int getCapacidade() const;
     string getMatricula() const;
-    list<voo> getPlanoVoo() const;
-    void addVoo(voo v);
+    list<Voo> getPlanoVoo() const;
+    void addVoo(Voo v);
 };
 
 
