@@ -3,10 +3,16 @@
 
 #include "defs.h"
 
-class serviço {
-    string tipoServiço;
-    struct tm data;
+class Servico {
+    string tipoServico;
+    tm data;
     string funcResponsavel;
+
+public:
+    Servico(string tipoS, tm data, string funResponsavel);
+    string getTipoServico() const;
+    tm getData() const;
+    string getFuncResponsavel() const;
 
 
 };
