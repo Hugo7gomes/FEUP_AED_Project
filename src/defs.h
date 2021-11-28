@@ -1,6 +1,6 @@
 
-#ifndef PROJECT_DEFS_H
-#define PROJECT_DEFS_H
+#ifndef DEFS_H
+#define DEFS_H
 
 using  namespace  std;
 

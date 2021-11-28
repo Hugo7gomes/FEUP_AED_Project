@@ -1,9 +1,9 @@
-#ifndef PROJECT_BILHETE_H
-#define PROJECT_BILHETE_H
+#ifndef BILHETE_H
+#define BILHETE_H
 
-#include "defs.h"
 #include "voo.h"
 #include "passageiro.h"
+#include "defs.h"
 
 class Bilhete {
     Passageiro passageiro;

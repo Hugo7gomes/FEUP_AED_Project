@@ -1,5 +1,5 @@
-#ifndef PROJECT_PASSAGEIRO_H
-#define PROJECT_PASSAGEIRO_H
+#ifndef PASSAGEIRO_H
+#define PASSAGEIRO_H
 
 #include "defs.h"
 

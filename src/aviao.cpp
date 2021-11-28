@@ -2,7 +2,7 @@
 // Created by jpedr on 25/11/2021.
 //
 
-#include "avião.h"
+#include "aviao.h"
 
 Aviao::Aviao(string m, int c, list<Voo> planoVoo) : matricula(m), capacidade(c), planoVoo(planoVoo){}
 

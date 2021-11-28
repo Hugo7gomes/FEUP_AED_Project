@@ -4,13 +4,13 @@
 
 #include "voo.h"
 
-Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest, list<Bilhete> tickets) {
+Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest) {
     numVoo = n;
     lotacao = lot;
     dataPartida = dPartida;
     origem = orig;
     destino = dest;
-    bilhetes = tickets;
+    //bilhetes = tickets;
 }
 
 
@@ -37,11 +37,11 @@ string Voo::getOrigem() const {
 string Voo::getDestino() const {
     return destino;
 }
-
+/*
 list <Bilhete> Voo::getBilhetes() const {
     return bilhetes;
 }
 
 void Voo::addBilhete(Bilhete b) {
     bilhetes.push_back(b);
-}
+}*/
