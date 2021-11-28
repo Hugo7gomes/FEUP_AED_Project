@@ -1,5 +1,5 @@
-#ifndef SERVIÇO_H
-#define SERVIÇO_H
+#ifndef SERVICO_H
+#define SERVICO_H
 
 #include "defs.h"
 
