@@ -2,6 +2,7 @@
 #define VOO_H
 
 #include "defs.h"
+#include "passageiro.h"
 
 class Voo {
     int numVoo;
@@ -9,7 +10,7 @@ class Voo {
     tm dataPartida;
     tm duracaoVoo;
     string origem,destino;
-    //list<Bilhete> bilhetes;
+    list<Passageiro> passageiros;
 public:
     Voo(int n, int lot, struct tm dPartida, struct tm durVoo, string orig, string dest);
     int getNumVoo() const;
@@ -18,8 +19,9 @@ public:
     tm getDuracaoVoo() const;
     string getOrigem() const;
     string getDestino() const;
-    //list<Bilhete> getBilhetes() const;
-    //void addBilhete(Bilhete b);
+    list<Passageiro> getPassageiros() const;
+    void addPassageiro(Passageiro p);
+
 };
 
 

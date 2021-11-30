@@ -4,7 +4,12 @@
 
 #include "aviao.h"
 
-Aviao::Aviao(string m, int c, list<Voo> planoVoo) : matricula(m), capacidade(c), planoVoo(planoVoo){}
+Aviao::Aviao(string m, int c, list<Voo> planoVoo) : matricula(m), capacidade(c), planoVoo(planoVoo){
+    list<Servico> servCompletos;
+    servicosCompletos =servCompletos;
+    queue<Servico> servRealizar;
+    servicosParaRealizar = servRealizar;
+}
 
 int Aviao::getCapacidade() const {
     return capacidade;
@@ -20,4 +25,19 @@ list <Voo> Aviao::getPlanoVoo() const {
 
 void Aviao::addVoo(Voo v) {
     planoVoo.push_back(v);
+}
+
+void Aviao::addServicoRealizar(Servico &s) {
+    servicosParaRealizar.push(s);
+}
+
+
+Servico Aviao::getProximoServico() const{
+    return servicosParaRealizar.front();
+}
+
+//adiciona serviço realizado aos completos e retira da queue
+void Aviao::addServicoCompleto(Servico s) {
+    servicosCompletos.push_back(getProximoServico());
+    servicosParaRealizar.pop();
 }

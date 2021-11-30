@@ -20,7 +20,10 @@ public:
     int getCapacidade() const;
     string getMatricula() const;
     list<Voo> getPlanoVoo() const;
+    Servico getProximoServico() const;
     void addVoo(Voo v);
+    void addServicoRealizar(Servico &s);
+    void addServicoCompleto(Servico s);
 };
 
 

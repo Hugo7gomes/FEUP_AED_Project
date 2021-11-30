@@ -10,7 +10,6 @@ Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest) {
     dataPartida = dPartida;
     origem = orig;
     destino = dest;
-    //bilhetes = tickets;
 }
 
 
@@ -37,11 +36,11 @@ string Voo::getOrigem() const {
 string Voo::getDestino() const {
     return destino;
 }
-/*
-list <Bilhete> Voo::getBilhetes() const {
-    return bilhetes;
+
+list <Passageiro> Voo::getPassageiros() const {
+    return passageiros;
 }
 
-void Voo::addBilhete(Bilhete b) {
-    bilhetes.push_back(b);
-}*/
+void Voo::addPassageiro(Passageiro p) {
+    passageiros.push_back(p);
+}

@@ -16,4 +16,8 @@ float TranspTerrestre::getDistancia() const {
     return distancia;
 }
 
+tm TranspTerrestre::getHorario() const {
+    return horario;
+}
+
 
