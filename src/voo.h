@@ -12,6 +12,7 @@ class Voo {
     string origem,destino;
     list<Passageiro> passageiros;
 public:
+    Voo();
     Voo(int n, int lot, struct tm dPartida, struct tm durVoo, string orig, string dest);
     int getNumVoo() const;
     int getLotacao() const;

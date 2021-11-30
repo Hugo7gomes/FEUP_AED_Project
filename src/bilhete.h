@@ -8,12 +8,15 @@
 class Bilhete {
     Passageiro passageiro;
     Voo voo;
+    bool temBagagem;
     bool bagagemAuto;
 public:
-    Bilhete(Passageiro p , Voo v);
+    Bilhete();
+    Bilhete(Passageiro p , Voo v, bool b);
     Passageiro getPassageiro() const;
     Voo getVoo() const;
-    bool getBagagenAuto() const;
+    bool gettemBagagem() const;
+    bool getBagagemAuto() const;
     void setBagagemAuto();
 };
 

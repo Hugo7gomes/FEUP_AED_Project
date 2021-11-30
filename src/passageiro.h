@@ -9,6 +9,7 @@ class Passageiro {
     int idade;
     int CC;
 public:
+    Passageiro();
     Passageiro(string n, char sex, int i, int cc);
     string getNome() const;
     char getSex() const;

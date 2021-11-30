@@ -21,3 +21,6 @@ int Passageiro::getIdade() const {
 int Passageiro::getCC() const {
     return CC;
 }
+
+Passageiro::Passageiro():nome(""), sex('F'), idade(0), CC(-1) {
+}

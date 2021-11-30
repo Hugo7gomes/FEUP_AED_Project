@@ -44,3 +44,12 @@ list <Passageiro> Voo::getPassageiros() const {
 void Voo::addPassageiro(Passageiro p) {
     passageiros.push_back(p);
 }
+
+Voo::Voo() {
+    tm Partida = {.tm_hour = -1};
+    numVoo = -1;
+    lotacao = -1;
+    dataPartida = Partida;
+    origem = "";
+    destino = "";
+}

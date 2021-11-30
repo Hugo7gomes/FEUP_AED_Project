@@ -4,7 +4,7 @@
 
 #include "bilhete.h"
 
-Bilhete::Bilhete(Passageiro p, Voo v): passageiro(p), voo(v) {
+Bilhete::Bilhete(Passageiro p, Voo v, bool b): passageiro(p), voo(v), temBagagem(b) {
     bagagemAuto = false;
 }
 
@@ -16,10 +16,17 @@ Voo Bilhete::getVoo() const {
     return voo;
 }
 
-bool Bilhete::getBagagenAuto() const {
+bool Bilhete::getBagagemAuto() const {
     return bagagemAuto;
 }
 
 void Bilhete::setBagagemAuto() {
     bagagemAuto = true;
+}
+
+bool Bilhete::gettemBagagem() const {
+    return temBagagem;
+}
+
+Bilhete::Bilhete(): passageiro(Passageiro()), voo(Voo()), temBagagem(false) {
 }
