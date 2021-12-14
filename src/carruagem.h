@@ -4,10 +4,10 @@
 
 #ifndef PROJECT_CARRUAGEM_H
 #define PROJECT_CARRUAGEM_H
-#include "bagagem.h"
+#include "bilhete.h"
 
 class Carruagem {
-    list<stack<Bagagem>> bagagens;
+    list<stack<Bilhete>> bagagens;
 public:
     Carruagem(int n, int m);
 };

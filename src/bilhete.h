@@ -1,23 +1,24 @@
 #ifndef BILHETE_H
 #define BILHETE_H
 
-#include "voo.h"
+
 #include "passageiro.h"
 #include "defs.h"
 
 class Bilhete {
+    static int idAux;
+    int id;
     Passageiro passageiro;
-    Voo voo;
     bool temBagagem;
     bool bagagemAuto;
 public:
     Bilhete();
-    Bilhete(Passageiro p , Voo v, bool b);
+    Bilhete(Passageiro p, bool b);
     Passageiro getPassageiro() const;
-    Voo getVoo() const;
     bool gettemBagagem() const;
     bool getBagagemAuto() const;
     void setBagagemAuto();
+    int getID();
 };
 
 

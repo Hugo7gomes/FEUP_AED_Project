@@ -4,17 +4,19 @@
 
 #include "bilhete.h"
 
-Bilhete::Bilhete(Passageiro p, Voo v, bool b): passageiro(p), voo(v), temBagagem(b) {
+int Bilhete :: idAux = 1;
+
+Bilhete::Bilhete(Passageiro p, bool b): passageiro(p), temBagagem(b) {
     bagagemAuto = false;
+    id = idAux;
+    idAux++;
 }
 
 Passageiro Bilhete::getPassageiro() const {
     return passageiro;
 }
 
-Voo Bilhete::getVoo() const {
-    return voo;
-}
+
 
 bool Bilhete::getBagagemAuto() const {
     return bagagemAuto;
@@ -27,6 +29,8 @@ void Bilhete::setBagagemAuto() {
 bool Bilhete::gettemBagagem() const {
     return temBagagem;
 }
-
-Bilhete::Bilhete(): passageiro(Passageiro()), voo(Voo()), temBagagem(false) {
+int Bilhete::getID() {
+    return id;
+}
+Bilhete::Bilhete(): passageiro(Passageiro()), temBagagem(false) {
 }

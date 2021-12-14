@@ -16,14 +16,22 @@ class Aviao {
     queue<Servico> servicosParaRealizar;
 
 public:
-    Aviao(string m, int c, list<Voo> planoVoo);
+    Aviao(string m, int c);
     int getCapacidade() const;
     string getMatricula() const;
     list<Voo> getPlanoVoo() const;
     Servico getProximoServico() const;
+    list<Servico>& getservicosCompletos();
+    Servico& getServicoRealizar();
+    int getNumServicosRealizar();
     void addVoo(Voo v);
     void addServicoRealizar(Servico &s);
-    void addServicoCompleto(Servico s);
+    void addServicoCompleto (Servico &s);
+    void realizarServico();
+    void mostrarVoos();
+    bool eliminarVoo(int numVoo);
+    Voo& procurarVoo();
+
 };
 
 

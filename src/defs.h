@@ -7,7 +7,7 @@ using  namespace  std;
 #include <stdio.h>
 #include <math.h>
 #include <string>
-#include <vector>
+//#include <vector>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -19,6 +19,7 @@ using  namespace  std;
 #include <list>
 #include <queue>
 #include <stack>
+#include <sstream>
 
 
 

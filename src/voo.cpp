@@ -37,12 +37,12 @@ string Voo::getDestino() const {
     return destino;
 }
 
-list <Passageiro> Voo::getPassageiros() const {
-    return passageiros;
+list <Bilhete> Voo::getBilhetes() const {
+    return bilhetes;
 }
 
-void Voo::addPassageiro(Passageiro p) {
-    passageiros.push_back(p);
+void Voo::addBilhete(Bilhete b) {
+    bilhetes.push_back(b);
 }
 
 Voo::Voo() {
@@ -53,3 +53,24 @@ Voo::Voo() {
     origem = "";
     destino = "";
 }
+
+void Voo::setLotacao(int l) {
+    this->lotacao = l;
+}
+
+bool Voo::removeBilhete(int id) {
+    list<Bilhete>::iterator iteradorBilhete = bilhetes.begin();
+    for(iteradorBilhete; iteradorBilhete != bilhetes.end(); iteradorBilhete++){
+        if(iteradorBilhete->getID() == id){
+            bilhetes.erase(iteradorBilhete);
+            return true;
+        }
+    }
+    return false;
+}
+
+
+Bilhete& Voo::procurarBilhete() {
+
+}
+

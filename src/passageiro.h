@@ -5,14 +5,12 @@
 
 class Passageiro {
     string nome;
-    char sex;
     int idade;
     int CC;
 public:
     Passageiro();
-    Passageiro(string n, char sex, int i, int cc);
+    Passageiro(string n, int i, int cc);
     string getNome() const;
-    char getSex() const;
     int getIdade() const;
     int getCC() const;
 };
