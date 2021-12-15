@@ -5,12 +5,15 @@
 #ifndef PROJECT_AEROPORTO_H
 #define PROJECT_AEROPORTO_H
 
-#include "list"
+#include <list>
 #include "aviao.h"
 #include "defs.h"
+#include "menus.h"
+#include "input.h"
 
-struct input{
-    input(string m, int c){matricula = m; capacidade = c;};
+
+struct inputStruct{
+    inputStruct(string m, int c){matricula = m; capacidade = c;};
 
     string matricula;
     int capacidade;
@@ -20,10 +23,8 @@ class Aeroporto {
     list<Aviao> avioes;
 
 
+
 public:
-    void showMenu() const;
-    void showMenuAlterarAviao() const;
-    void showMenuVoo(Voo& v) const;
     void showAvioes();
     void verVoo(Aviao& aviao);
     int inputNumVoo(Aviao& aviao);
@@ -35,7 +36,7 @@ public:
     void realizarServico(Aviao& aviao);
     list<Aviao>& getAvioes();
     Aviao& procurarAviao();
-    input inputMatriculaCapacidade();
+    inputStruct inputMatriculaCapacidade();
     void addAviao(string matricula, int c);
     void removeAviao();
     void comprarBilhetes();

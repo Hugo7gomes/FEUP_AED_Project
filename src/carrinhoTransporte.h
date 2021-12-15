@@ -5,9 +5,12 @@
 #ifndef CARRINHOTRANSPORTE_H
 #define CARRINHOTRANSPORTE_H
 
+#include "carruagem.h"
 
 class carrinhoTransporte {
-
+        vector<Carruagem> carruagens;
+public:
+    carrinhoTransporte(int numCarruagens);
 };
 
 

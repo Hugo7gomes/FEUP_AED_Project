@@ -7,9 +7,11 @@
 #include "bilhete.h"
 
 class Carruagem {
-    list<stack<Bilhete>> bagagens;
+    vector<stack<Bilhete>> bagagens;
+    int tamanhoColuna;
 public:
-    Carruagem(int n, int m);
+    Carruagem(int filaBagagem, int colunaBagagem);
+    void addBagagem(Bilhete& bilhete);
 };
 
 

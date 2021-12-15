@@ -1,0 +1,18 @@
+Aed Project:
+criar class de Menus e coloca la como atributo do Aeroporto;
+
+substituir todo este estilo de codigo:
+    cin >> CC;
+    while (cin.fail())
+    {
+        cout << "Input invalido, insira novamente!" << endl;
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cin >> CC;
+    }
+por um metodo que retorne o input;
+
+Diz que deve haver a possiblidade de listagem por critérios a definir pelo utilizador.
+
+Utilizar algoritmos de pesquisa e ordenação 
+

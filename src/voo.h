@@ -3,6 +3,7 @@
 
 #include "defs.h"
 #include "bilhete.h"
+#include "carrinhoTransporte.h"
 
 class Voo {
     int numVoo;
@@ -11,6 +12,8 @@ class Voo {
     tm duracaoVoo;
     string origem,destino;
     list<Bilhete> bilhetes;
+    //carrinhoTransporte carrinho;
+
 public:
     Voo();
     Voo(int n, int lot, struct tm dPartida, struct tm durVoo, string orig, string dest);

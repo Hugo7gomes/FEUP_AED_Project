@@ -63,10 +63,8 @@ Voo& Aviao::procurarVoo() {
     int numVoo;
 
     while(true){
-        cin.clear();
-        cin.ignore(1000, '\n');
         cout << "Introduza o numero de Voo" << endl;
-        cin >> numVoo;
+        input::inputInt(numVoo);
         for(Voo& v : planoVoo){
             if(v.getNumVoo() == numVoo){
                 return v;
