@@ -5,6 +5,7 @@
 #include "defs.h"
 #include "servico.h"
 #include "input.h"
+//#include "menus.h"
 
 
 
@@ -31,6 +32,8 @@ public:
     void mostrarVoos();
     bool eliminarVoo(int numVoo);
     Voo& procurarVoo();
+    void ordenarVoos(int inputOrdenarVoos);
+    void ordenarServicosCompletos(int inputOrdenarServicosCompletos);
 
 };
 

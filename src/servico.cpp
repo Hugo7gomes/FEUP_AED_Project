@@ -17,6 +17,6 @@ tm Servico::getData() const {
     return data;
 }
 
-string Servico::getFuncResponsavel() const {
+string Servico::getFuncResponsavel()  {
     return funcResponsavel;
 }

@@ -16,7 +16,8 @@ namespace Menus {
     void showMenuAskBagagemAuto();
     void showMenuAskTipoServico();
     void showMenuAskOrdenacaoAvioes();
-
+    void showMenuAskOrdenacaoVoos();
+    void showMenuAskOrdenacaoServicosCompletos();
 };
 
 

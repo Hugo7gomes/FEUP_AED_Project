@@ -5,9 +5,11 @@
 #include "voo.h"
 
 Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest) {
+    //cout << dPartida
     numVoo = n;
     lotacao = lot;
     dataPartida = dPartida;
+    duracaoVoo = durVoo;
     origem = orig;
     destino = dest;
 }
@@ -21,7 +23,7 @@ int Voo::getLotacao() const {
     return lotacao;
 }
 
-tm Voo::getDataPartida() const {
+tm Voo::getDataPartida() {
     return dataPartida;
 }
 

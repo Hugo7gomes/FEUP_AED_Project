@@ -16,3 +16,25 @@ Diz que deve haver a possiblidade de listagem por critérios a definir pelo util
 
 Utilizar algoritmos de pesquisa e ordenação 
 
+cout << "Deseja alterar algum aviao?" << endl;
+        cout << "1) Sim" << endl;
+        cout << "0) Nao" << endl;
+        int inputAlterarAviao;
+        cin >> inputAlterarAviao;
+        while ( inputAlterarAviao != 0 && inputAlterarAviao != 1 || cin.fail())
+        {
+            cout << "Input invalido, insira novamente!" << endl;
+            cout << "Deseja alterar algum aviao?" << endl;
+            cout << "1) Sim" << endl;
+            cout << "0) Nao" << endl;
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cin >> inputAlterarAviao;
+        }
+
+Listagens:
+Mostrar avioes;(Capacidade,Matricula)
+Mostrar voos;(numVoo,dataPartida, duracaoVoo,origem, destino)
+Mostrar servicosCompletos;(tipoServiço, data, funcResponsavel)
+
+Ordenar ordem reversa

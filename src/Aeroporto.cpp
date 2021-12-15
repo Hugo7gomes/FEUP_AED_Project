@@ -4,14 +4,38 @@
 
 #include "Aeroporto.h"
 
+struct compareByMatricula{
+    bool operator() (Aviao a, Aviao b){
+        return a.getMatricula() < b.getMatricula();
+    }
+};
+
+struct compareByCapacidade{
+    bool operator() (Aviao a, Aviao b){
+        return a.getCapacidade() <= b.getCapacidade();
+    }
+};
+
+
+
 void Aeroporto::showAvioes() {
     if (avioes.empty()) {
         cout << "Atualmente, o aeroporto nao tem avioes" << endl;
         return;
     } else {
         Menus::showMenuAskOrdenacaoAvioes();
-        int inputOrde
-        //dar sort da lista por esse atributo
+        int inputOrdenacaoAvioes;
+        input::inputInt(inputOrdenacaoAvioes);
+        while(inputOrdenacaoAvioes != 1 && inputOrdenacaoAvioes != 2){
+            input::inputInt(inputOrdenacaoAvioes);
+        }
+
+        if(inputOrdenacaoAvioes == 1){
+            avioes.sort(compareByMatricula());
+        }else{
+            avioes.sort(compareByCapacidade());
+        }
+
         cout << "Os avioes disponiveis sao" << endl;
         for (Aviao &a: avioes) {
             cout << a.getMatricula() << endl;
@@ -33,6 +57,7 @@ void Aeroporto::addAviao(string matricula, int c) {
     Aviao aviao(matricula, c);
 
     avioes.push_back(aviao);
+    //update.Avioes();
 }
 
 void Aeroporto::removeAviao() {
@@ -87,6 +112,7 @@ void Aeroporto::alterarAviao(Aviao &aviao) {
                 verVoo(aviao);
                 break;
             case 4:
+                ordenarVoos(aviao);
                 aviao.mostrarVoos();
                 break;
             case 5:
@@ -174,6 +200,8 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     cout << "Introduza a lotacao do Voo" << endl;
     input::inputInt(lotacao);
 
+
+
     cout << "Introduza o mes da data de Partida" << endl;
     input::inputInt(dataPartida.tm_mon);
     while (dataPartida.tm_mon > 12) {
@@ -186,17 +214,20 @@ void Aeroporto::criarVoo(Aviao &aviao) {
         input::inputInt(dataPartida.tm_mday);
     }
 
+
     cout << "Introduza a hora da data de Partida" << endl;
     input::inputInt(dataPartida.tm_hour);
     while (dataPartida.tm_hour > 23) {
         input::inputInt(dataPartida.tm_hour);
     }
 
+
     cout << "Introduza os min da data de Partida" << endl;
     input::inputInt(dataPartida.tm_min);
     while (dataPartida.tm_min > 60) {
         input::inputInt(dataPartida.tm_min);
     }
+
 
     cout << "Introduza as horas de Voo" << endl;
     input::inputInt(duracaoVoo.tm_hour);
@@ -386,6 +417,17 @@ void Aeroporto::mostrarServicoRealizar(Aviao &aviao) {
 }
 
 void Aeroporto::mostrarServicosCompletos(Aviao &aviao) {
+    int inputOrdenarServicosCompletos;
+
+    Menus::showMenuAskOrdenacaoServicosCompletos();
+
+    input::inputInt(inputOrdenarServicosCompletos);
+    while(inputOrdenarServicosCompletos != 1 && inputOrdenarServicosCompletos!=2 && inputOrdenarServicosCompletos!=3){
+        input::inputInt(inputOrdenarServicosCompletos);
+    }
+
+    aviao.ordenarServicosCompletos(inputOrdenarServicosCompletos);
+
     for (Servico &s: aviao.getservicosCompletos()) {
         cout << s.getTipoServico() << endl;
         cout << s.getFuncResponsavel() << endl;
@@ -448,6 +490,15 @@ void Aeroporto::realizarServico(Aviao &aviao) {
     }
 }
 
+void Aeroporto::ordenarVoos(Aviao &aviao) {
+    int inputOrdenarVoos;
+    Menus::showMenuAskOrdenacaoVoos();
+    input::inputInt(inputOrdenarVoos);
+    while(inputOrdenarVoos != 1 && inputOrdenarVoos!=2 && inputOrdenarVoos!=3 && inputOrdenarVoos!=4 && inputOrdenarVoos!=5){
+        input::inputInt(inputOrdenarVoos);
+    }
+    aviao.ordenarVoos(inputOrdenarVoos);
+}
 
 
 

@@ -20,6 +20,7 @@ using  namespace  std;
 #include <queue>
 #include <stack>
 #include <sstream>
+#include <cctype>
 
 
 

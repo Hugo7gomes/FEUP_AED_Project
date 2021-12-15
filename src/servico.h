@@ -12,7 +12,7 @@ public:
     Servico(string tipoS, tm data, string funResponsavel);
     string getTipoServico() const;
     tm getData() const;
-    string getFuncResponsavel() const;
+    string getFuncResponsavel();
 
 
 };

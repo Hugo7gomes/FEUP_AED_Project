@@ -67,9 +67,25 @@ namespace Menus {
 
     void showMenuAskOrdenacaoAvioes() {
         cout << "Deseja ver os avioes ordenados por: " << endl;
-        cout << "0) Matricula" << endl;
-        cout << "1) Capacidade" << endl;
+        cout << "1) Matricula" << endl;
+        cout << "2) Capacidade" << endl;
 
+    }
+
+    void showMenuAskOrdenacaoVoos() {
+        cout << "Deseja ver os voos ordenados por: " << endl;
+        cout << "1) Numero do voo" << endl;
+        cout << "2) Data de Partida" << endl;
+        cout << "3) Duracao do voo" << endl;
+        cout << "4) Local de origem" << endl;
+        cout << "5) Local de destino" << endl;
+    }
+
+    void showMenuAskOrdenacaoServicosCompletos() {
+        cout << "Deseja ver os servicos completos ordenados por: " << endl;
+        cout << "1) Tipo de servico" << endl;
+        cout << "2) Data do servico" << endl;
+        cout << "3) Funcionario responsavel" << endl;
     }
 
 

@@ -19,10 +19,9 @@ struct inputStruct{
     int capacidade;
 };
 
+
 class Aeroporto {
     list<Aviao> avioes;
-
-
 
 public:
     void showAvioes();
@@ -43,6 +42,7 @@ public:
     void alterarAviao(Aviao& aviao);
     void criarVoo(Aviao& aviao);
     void deleteVoo(Aviao& aviao);
+    void ordenarVoos(Aviao& aviao);
     Passageiro criarPassageiro();
     void run();
 

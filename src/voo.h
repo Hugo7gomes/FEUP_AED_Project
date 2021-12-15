@@ -19,7 +19,7 @@ public:
     Voo(int n, int lot, struct tm dPartida, struct tm durVoo, string orig, string dest);
     int getNumVoo() const;
     int getLotacao() const;
-    tm getDataPartida() const;
+    tm getDataPartida();
     tm getDuracaoVoo() const;
     string getOrigem() const;
     string getDestino() const;
