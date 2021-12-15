@@ -9,6 +9,9 @@ void Aeroporto::showAvioes() {
         cout << "Atualmente, o aeroporto nao tem avioes" << endl;
         return;
     } else {
+        Menus::showMenuAskOrdenacaoAvioes();
+        int inputOrde
+        //dar sort da lista por esse atributo
         cout << "Os avioes disponiveis sao" << endl;
         for (Aviao &a: avioes) {
             cout << a.getMatricula() << endl;
@@ -23,7 +26,6 @@ void Aeroporto::showAvioes() {
         if (inputAlterarAviao == 1) {
             alterarAviao(procurarAviao());
         }
-
     }
 }
 
@@ -55,10 +57,9 @@ void Aeroporto::deleteVoo(Aviao &aviao) {
     if (aviao.eliminarVoo(numVoo)) {
         cout << "Voo eliminado com sucesso" << endl;
     } else {
-        cout << "Voo não existe" << endl;
+        cout << "Voo nao existe" << endl;
     }
 }
-
 
 void Aeroporto::alterarAviao(Aviao &aviao) {
 
@@ -108,7 +109,6 @@ void Aeroporto::alterarAviao(Aviao &aviao) {
     }
 
 }
-
 
 void Aeroporto::run() {
     bool isRunnig = true;
@@ -335,12 +335,15 @@ void Aeroporto::verVoo(Aviao &a) {
 
 void Aeroporto::verBilhete(Voo &voo) {
     int id;
+    if(voo.getBilhetes().empty()){
+        cout << "Nao existem bilhetes registados" << endl;
+        return;
+    }
     while (true) {
         cout << "Introduza o id do Bilhete, 0 para voltar" << endl;
         input::inputInt(id);
         for (Bilhete &b: voo.getBilhetes()) {
             if (b.getID() == id) {
-                cout << b.getID() << endl;
                 cout << "Nome: " << b.getPassageiro().getNome() << endl;
                 cout << "Idade: " << b.getPassageiro().getIdade() << endl;
                 cout << "CC: " << b.getPassageiro().getCC() << endl;
@@ -356,9 +359,16 @@ void Aeroporto::verBilhete(Voo &voo) {
     }
 }
 
-void Aeroporto::removerBilhete(Voo &voo) {
-    Bilhete b = voo.procurarBilhete();
-    voo.removeBilhete(b.getID());
+void Aeroporto::removerBilhete(Voo& voo) {
+    int id;
+    cout << "Introduza id do bilhete a remover" << endl;
+    input::inputInt(id);
+    if(voo.removeBilhete(id)){
+        cout << "Bilhete removido com sucesso" << endl;
+    }else{
+        cout << "Bilhete não existe" << endl;
+    }
+
 }
 
 void Aeroporto::mostrarServicoRealizar(Aviao &aviao) {

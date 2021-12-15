@@ -12,7 +12,7 @@ public:
     Load();
     void avioes(Aeroporto & aeroporto);
     void voos(Aeroporto& aeroporto);//ler os voos do aviao vooFile
-    void bilhetes(Aviao& aeroporto);
+    void bilhetes(Aeroporto& aeroporto);
     void servicosCompletos(Aeroporto& aeroporto);
     void servicosRealizar(Aeroporto& aeroporto);
     //void carrinhoTransporte(Aeroporto& aeroporto);

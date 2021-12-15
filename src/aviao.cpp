@@ -15,7 +15,7 @@ string Aviao::getMatricula() const {
     return matricula;
 }
 
-list <Voo> Aviao::getPlanoVoo() const {
+list <Voo>& Aviao::getPlanoVoo() {
     return planoVoo;
 }
 

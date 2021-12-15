@@ -65,5 +65,12 @@ namespace Menus {
 
     }
 
+    void showMenuAskOrdenacaoAvioes() {
+        cout << "Deseja ver os avioes ordenados por: " << endl;
+        cout << "0) Matricula" << endl;
+        cout << "1) Capacidade" << endl;
+
+    }
+
 
 }

@@ -64,8 +64,8 @@ void Load::voos(Aeroporto& aeroporto) {
     }
 }
 
-void Load::bilhetes(Aviao& a) {
-    //for(Aviao& a : aeroporto.getAvioes()){
+void Load::bilhetes(Aeroporto& aeroporto) {
+    for(Aviao& a : aeroporto.getAvioes()){
         for(Voo& v : a.getPlanoVoo()){
             ostringstream bilheteFile;
             bilheteFile << a.getMatricula() << "_" << v.getNumVoo() << "_Bilhetes.txt";
@@ -102,7 +102,7 @@ void Load::bilhetes(Aviao& a) {
             bilheteStream.close();
         }
     }
-//}
+}
 
 
 Load::Load() {

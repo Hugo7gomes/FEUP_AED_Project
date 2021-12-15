@@ -9,6 +9,7 @@ int main() {
     load.voos(aeroporto);
     load.servicosRealizar(aeroporto);
     load.servicosCompletos(aeroporto);
+    load.bilhetes(aeroporto);
     aeroporto.run();
 
 

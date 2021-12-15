@@ -70,7 +70,5 @@ bool Voo::removeBilhete(int id) {
 }
 
 
-Bilhete& Voo::procurarBilhete() {
 
-}
 
