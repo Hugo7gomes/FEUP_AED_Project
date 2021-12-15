@@ -15,3 +15,7 @@ void Update::avioes(Aeroporto &aeroporto) {
         }
     }
 }
+
+Update::Update() {
+
+}

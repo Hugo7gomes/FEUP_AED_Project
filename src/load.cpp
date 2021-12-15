@@ -42,6 +42,8 @@ void Load::voos(Aeroporto& aeroporto) {
             numVooInt = stoi(numVoo);
             getline(voosStream, lotacao );
             lotacaoInt = stoi(lotacao);
+            getline(voosStream, line_file);
+            dataPartida.tm_year = stoi(line_file) -1900;
             getline(voosStream, line_file );
             dataPartida.tm_mon = stoi(line_file);
             getline(voosStream, line_file );

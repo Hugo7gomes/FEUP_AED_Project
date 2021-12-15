@@ -57,7 +57,6 @@ void Aeroporto::addAviao(string matricula, int c) {
     Aviao aviao(matricula, c);
 
     avioes.push_back(aviao);
-    //update.Avioes();
 }
 
 void Aeroporto::removeAviao() {
@@ -69,6 +68,7 @@ void Aeroporto::removeAviao() {
     for (avioesIt; avioesIt != avioes.end(); avioesIt++) {
         if (avioesIt->getMatricula() == matricula) {
             avioes.erase(avioesIt);
+            break;
         }
     }
 }
@@ -151,10 +151,11 @@ void Aeroporto::run() {
             case 1:
                 showAvioes();
                 break;
-            case 2:
-                int c;
-                addAviao(inputMatriculaCapacidade().matricula, inputMatriculaCapacidade().capacidade);
+            case 2: {
+                struct inputStruct informacaoAviao = inputMatriculaCapacidade();
+                addAviao(informacaoAviao.matricula, informacaoAviao.capacidade);
                 break;
+            }
             case 3:
                 removeAviao();
                 break;
@@ -200,7 +201,13 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     cout << "Introduza a lotacao do Voo" << endl;
     input::inputInt(lotacao);
 
-
+    int ano;
+    cout << "Introduza o ano da data de Partida" << endl;
+    input::inputInt(ano);
+    while (ano> 2020) {
+        input::inputInt(ano);
+    }
+    dataPartida.tm_year = ano-1900;
 
     cout << "Introduza o mes da data de Partida" << endl;
     input::inputInt(dataPartida.tm_mon);
@@ -326,7 +333,21 @@ inputStruct Aeroporto::inputMatriculaCapacidade() {
     string matricula;
 
     cout << "Introduza a matricula do Aviao" << endl;
-    input::inputStr(matricula);
+
+
+    bool checkMatricula;
+    do{
+        checkMatricula = false;
+        input::inputMatricula(matricula);
+        for(Aviao& a: avioes) {
+            if (a.getMatricula() == matricula) {
+                cout << "Matricula ja existe, escolha outra" << endl;
+                checkMatricula = true;
+                break;
+            }
+        }
+    } while (checkMatricula);
+
 
     cout << "Introduza a capacidade do Aviao" << endl;
     input::inputInt(c);

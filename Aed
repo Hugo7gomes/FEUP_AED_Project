@@ -38,3 +38,18 @@ Mostrar voos;(numVoo,dataPartida, duracaoVoo,origem, destino)
 Mostrar servicosCompletos;(tipoServiço, data, funcResponsavel)
 
 Ordenar ordem reversa
+
+A fazer:
+ver carruagens/carrinho
+transportesTerrestre bst mostrar por escolha 
+update e criação de ficheiros;
+adicionar avioes com a mesma matricula 
+doxygen
+apresentação
+
+criar class de update
+com os mesmos metodos do load
+cada metodo apaga o conteudo antigo e
+escreve o novo;
+
+adicionar ás funçoes load a criaçao de ficheiros

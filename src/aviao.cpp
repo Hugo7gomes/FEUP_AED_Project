@@ -98,9 +98,9 @@ struct compareByNumVoo{
 struct compareByDataPartida{
     bool operator() (Voo a, Voo b){
         struct tm tm1 = a.getDataPartida();
-        tm1.tm_year = 78;
+        //tm1.tm_year = 78;
         struct tm tm2 = b.getDataPartida();
-        tm2.tm_year = 78;
+        //tm2.tm_year = 78;
         time_t t1 = mktime(&tm1);
         time_t t2 = mktime(&tm2);
         return difftime(t1,t2) <0.0;
