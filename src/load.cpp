@@ -10,8 +10,10 @@ void Load::avioes(Aeroporto& aeroporto) {
     string capacidadeAviao;
     int capacidadeAviaoInt;
 
+    string fileName = "avioes.txt";
+
     ifstream avioesStream;
-    avioesStream.open("avioes.txt");
+    avioesStream.open(fileName);
 
 
     if(avioesStream.is_open()){
@@ -21,6 +23,8 @@ void Load::avioes(Aeroporto& aeroporto) {
 
             aeroporto.addAviao(matriculaAviao,capacidadeAviaoInt);
         }
+    }else{
+        createFile(fileName);
     }
 
     avioesStream.close();
@@ -32,37 +36,46 @@ void Load::voos(Aeroporto& aeroporto) {
         vooFile << a.getMatricula() << "_Voos.txt";
 
         int numVooInt, lotacaoInt;
-        string numVoo, lotacao, line_file, origem,destino;
+        string numVoo, lotacao, line_file, origem,destino, numCarruagens, numPilhas, numMalas;
 
         tm dataPartida, duracaoVoo;
 
         fstream voosStream;
         voosStream.open(vooFile.str());
-        while(getline(voosStream, numVoo)){
-            numVooInt = stoi(numVoo);
-            getline(voosStream, lotacao );
-            lotacaoInt = stoi(lotacao);
-            getline(voosStream, line_file);
-            dataPartida.tm_year = stoi(line_file) -1900;
-            getline(voosStream, line_file );
-            dataPartida.tm_mon = stoi(line_file);
-            getline(voosStream, line_file );
-            dataPartida.tm_mday = stoi(line_file);
-            getline(voosStream, line_file);
-            dataPartida.tm_hour = stoi(line_file);
-            getline(voosStream, line_file );
-            dataPartida.tm_min  = stoi(line_file);
-            getline(voosStream,  line_file);
-            duracaoVoo.tm_hour =  stoi(line_file);
-            getline(voosStream,  line_file);
-            duracaoVoo.tm_min = stoi(line_file);
-            getline(voosStream,  origem);
-            getline(voosStream,  destino);
+        if(voosStream.is_open()){
+            while(getline(voosStream, numVoo)){
+                numVooInt = stoi(numVoo);
+                getline(voosStream, lotacao );
+                lotacaoInt = stoi(lotacao);
+                getline(voosStream, line_file);
+                dataPartida.tm_year = stoi(line_file) -1900;
+                getline(voosStream, line_file );
+                dataPartida.tm_mon = stoi(line_file);
+                getline(voosStream, line_file );
+                dataPartida.tm_mday = stoi(line_file);
+                getline(voosStream, line_file);
+                dataPartida.tm_hour = stoi(line_file);
+                getline(voosStream, line_file );
+                dataPartida.tm_min  = stoi(line_file);
+                getline(voosStream,  line_file);
+                duracaoVoo.tm_hour =  stoi(line_file);
+                getline(voosStream,  line_file);
+                duracaoVoo.tm_min = stoi(line_file);
+                getline(voosStream,  origem);
+                getline(voosStream,  destino);
+                getline(voosStream, numCarruagens);
+                getline(voosStream, numPilhas);
+                getline(voosStream, numMalas);
 
-            Voo v(numVooInt, lotacaoInt, dataPartida, duracaoVoo, origem, destino );
-            a.addVoo(v);
+
+                Voo v(numVooInt, lotacaoInt, dataPartida, duracaoVoo, origem, destino, stoi(numCarruagens), stoi(numPilhas), stoi(numMalas));
+                a.addVoo(v);
+            }
+            voosStream.close();
+        }else{
+            createFile(vooFile.str());
         }
-        voosStream.close();
+
     }
 }
 
@@ -97,11 +110,14 @@ void Load::bilhetes(Aeroporto& aeroporto) {
                     getline(bilheteStream, bagagemAutoStr);
                     if (bagagemAutoStr == "1" && temBagagem) {
                         b.setBagagemAuto();
+                        v.getCarrinho().addBagagemCarruagem(b);
                     }
                     v.addBilhete(b);
                 }
+                bilheteStream.close();
+            }else{
+                createFile(bilheteFile.str());
             }
-            bilheteStream.close();
         }
     }
 }
@@ -121,18 +137,25 @@ void Load::servicosCompletos(Aeroporto &aeroporto) {
 
         fstream servicosCompletosStream;
         servicosCompletosStream.open(servicosCompletosFile.str());
-        while(getline(servicosCompletosStream,tipoServico)){
-            getline(servicosCompletosStream,dataStr);
-            data.tm_mon = stoi(dataStr);
-            getline(servicosCompletosStream,dataStr);
-            data.tm_mday = stoi(dataStr);
-            getline(servicosCompletosStream, dataStr);
-            data.tm_hour = stoi(dataStr);
-            getline(servicosCompletosStream,funcResponsavel);
 
-            Servico s(tipoServico, data, funcResponsavel);
-            a.addServicoCompleto(s);
+        if(servicosCompletosStream.is_open()){
+            while(getline(servicosCompletosStream,tipoServico)){
+                getline(servicosCompletosStream,dataStr);
+                data.tm_mon = stoi(dataStr);
+                getline(servicosCompletosStream,dataStr);
+                data.tm_mday = stoi(dataStr);
+                getline(servicosCompletosStream, dataStr);
+                data.tm_hour = stoi(dataStr);
+                getline(servicosCompletosStream,funcResponsavel);
+
+                Servico s(tipoServico, data, funcResponsavel);
+                a.addServicoCompleto(s);
+            }
+            servicosCompletosStream.close();
+        }else{
+            createFile(servicosCompletosFile.str());
         }
+
     }
 }
 
@@ -146,19 +169,38 @@ void Load::servicosRealizar(Aeroporto &aeroporto) {
 
         fstream servicosRealizarStream;
         servicosRealizarStream.open(servicosRealizarFile.str());
-        while(getline(servicosRealizarStream,tipoServico)){
-            getline(servicosRealizarStream,dataStr);
-            data.tm_mon = stoi(dataStr);
-            getline(servicosRealizarStream,dataStr);
-            data.tm_mday = stoi(dataStr);
-            getline(servicosRealizarStream, dataStr);
-            data.tm_hour = stoi(dataStr);
-            getline(servicosRealizarStream,funcResponsavel);
+        if(servicosRealizarStream.is_open()){
+            while(getline(servicosRealizarStream,tipoServico)){
+                getline(servicosRealizarStream,dataStr);
+                data.tm_mon = stoi(dataStr);
+                getline(servicosRealizarStream,dataStr);
+                data.tm_mday = stoi(dataStr);
+                getline(servicosRealizarStream, dataStr);
+                data.tm_hour = stoi(dataStr);
+                getline(servicosRealizarStream,funcResponsavel);
 
-            Servico s(tipoServico, data, funcResponsavel);
-            a.addServicoRealizar(s);
+                Servico s(tipoServico, data, funcResponsavel);
+                a.addServicoRealizar(s);
+            }
+            servicosRealizarStream.close();
+        }else{
+            createFile(servicosRealizarFile.str());
         }
     }
+}
+
+void Load::createFile(string fileName) {
+    ofstream createFile;
+    createFile.open(fileName);
+    createFile.close();
+}
+
+void Load::run(Aeroporto &aeroporto) {
+    avioes(aeroporto);
+    voos(aeroporto);
+    bilhetes(aeroporto);
+    servicosCompletos(aeroporto);
+    servicosRealizar(aeroporto);
 }
 
 

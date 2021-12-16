@@ -12,11 +12,11 @@ class Voo {
     tm duracaoVoo;
     string origem,destino;
     list<Bilhete> bilhetes;
-    //carrinhoTransporte carrinho;
+    carrinhoTransporte carrinho;
 
 public:
     Voo();
-    Voo(int n, int lot, struct tm dPartida, struct tm durVoo, string orig, string dest);
+    Voo(int n,int lot, struct tm dPartida, struct tm durVoo, string orig, string dest, int numCarruagens,int numPilhas,int numMalas);
     int getNumVoo() const;
     int getLotacao() const;
     tm getDataPartida();
@@ -27,7 +27,7 @@ public:
     void addBilhete(Bilhete b);
     void setLotacao(int l);
     bool removeBilhete(int id);
-    Bilhete& procurarBilhete();
+    carrinhoTransporte& getCarrinho();
 };
 
 

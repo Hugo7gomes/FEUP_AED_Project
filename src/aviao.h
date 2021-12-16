@@ -21,9 +21,9 @@ public:
     int getCapacidade() const;
     string getMatricula() const;
     list<Voo>& getPlanoVoo();
-    Servico getProximoServico() const;
     list<Servico>& getservicosCompletos();
     Servico& getServicoRealizar();
+    queue<Servico>& getServicosRealizar();
     int getNumServicosRealizar();
     void addVoo(Voo v);
     void addServicoRealizar(Servico &s);

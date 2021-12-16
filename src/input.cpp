@@ -14,18 +14,22 @@ namespace input{
            cin.clear();
            cin.ignore(1000, '\n');
            cin >> num;
+
        }
    }
 
-    void inputStr(string& str){
-        str.clear();
+    string inputStr(){
+        string str;
         cin.clear();
-        cin.ignore(1000, '\n');
         getline(cin, str);
+        return str;
+
    }
 
    void inputMatricula(string& str){
        str.clear();
+       cin.clear();
+       cin.ignore(1000, '\n');
        cin >> str;
    }
 

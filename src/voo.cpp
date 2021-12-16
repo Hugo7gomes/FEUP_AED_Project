@@ -4,14 +4,15 @@
 
 #include "voo.h"
 
-Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest) {
-    //cout << dPartida
+Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest,int numCarruagens, int numPilhas, int numMalas) {
     numVoo = n;
     lotacao = lot;
     dataPartida = dPartida;
     duracaoVoo = durVoo;
     origem = orig;
     destino = dest;
+    carrinhoTransporte carro(numCarruagens, numPilhas, numMalas);
+    carrinho = carro;
 }
 
 
@@ -64,12 +65,21 @@ bool Voo::removeBilhete(int id) {
     list<Bilhete>::iterator iteradorBilhete = bilhetes.begin();
     for(iteradorBilhete; iteradorBilhete != bilhetes.end(); iteradorBilhete++){
         if(iteradorBilhete->getID() == id){
+            if(iteradorBilhete->getBagagemAuto()){
+                carrinho.removeBagagemCarruagem(*iteradorBilhete);
+            }
             bilhetes.erase(iteradorBilhete);
             return true;
         }
     }
     return false;
 }
+
+carrinhoTransporte &Voo::getCarrinho() {
+    return carrinho;
+}
+
+
 
 
 

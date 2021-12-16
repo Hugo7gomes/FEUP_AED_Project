@@ -8,7 +8,7 @@
 
 namespace  input{
     void inputInt(int& num);
-    void inputStr(string& str);
+    string inputStr();
     void inputMatricula(string& str);
 }
 

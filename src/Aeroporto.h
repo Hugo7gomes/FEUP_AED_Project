@@ -24,6 +24,8 @@ class Aeroporto {
     list<Aviao> avioes;
 
 public:
+    void TratarVoos(Aviao &aviao);
+    void TratarServicos(Aviao &aviao);
     void showAvioes();
     void verVoo(Aviao& aviao);
     int inputNumVoo(Aviao& aviao);

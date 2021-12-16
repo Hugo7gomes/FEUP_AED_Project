@@ -26,11 +26,11 @@ cout << "Deseja alterar algum aviao?" << endl;
             cout << "Input invalido, insira novamente!" << endl;
             cout << "Deseja alterar algum aviao?" << endl;
             cout << "1) Sim" << endl;
-            cout << "0) Nao" << endl;
-            cin.clear();
-            cin.ignore(1000, '\n');
+            cout << "0) Nao" << endl;   
+            cin.clear(););
             cin >> inputAlterarAviao;
         }
+            cin.ignore(1000, '\n'
 
 Listagens:
 Mostrar avioes;(Capacidade,Matricula)
@@ -41,15 +41,26 @@ Ordenar ordem reversa
 
 A fazer:
 ver carruagens/carrinho
-transportesTerrestre bst mostrar por escolha 
-update e criação de ficheiros;
-adicionar avioes com a mesma matricula 
+    Associar carrinho a um voo.
+    Pedir carruagens linhas colunas na criacao do Voo.
+    Quando pede bagagem automatica verificar se ainda tem espaço no carrinho;
+transportesTerrestre bst mostrar por escolha
+implementar algoritmo de ordenacao 
 doxygen
 apresentação
 
-criar class de update
-com os mesmos metodos do load
-cada metodo apaga o conteudo antigo e
-escreve o novo;
+Aeroporto:
+    1) Avioes
+    2) Transportes Terrestres
+    0) Exit
 
-adicionar ás funçoes load a criaçao de ficheiros
+Transportes Terrestres:
+    Ver transportes:
+        horario
+        distancia
+        tipo
+    Adicionar Transporte
+    Remover Transporte
+
+Ver voo aceita quando nao ha voos e nao tem voltar para tras
+         

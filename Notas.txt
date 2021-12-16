@@ -1,44 +1,41 @@
-git@github.com:up202005035/AED_Project.git
+ter ficheiro com todos os avioes:
+matricula capacidade
 
-Class avião:
-string matrícula (A310)
-int capacidade // max
-list<voo> planoVoo
+ter um ficheiro para cada aviao com os voos:
+(matricula_Voos.txt)
+numVoo lotacao dataPartida duracaoVoo origem destino
 
-Class voo:
-int numVoo
-int lotação //num de lugares ocupados
-Data dataPartida
-Data/Tempo duraçãoVoo
-string origem,destino
-list<bilhete> bilhetes
-
-Class serviço:
-string tipoServiço
-Data data
-string funcResponsavel
-
-Serviços a realizar -> guardar em fila
-Serviços realizados -> guardar em qualquer coisa
-
-Class passageiro:
-string Nome
-
-Class bilhete:
-passageiro p
-voo v
-bool bagagem
-//incluir aquisição de conjunto de bilhetes
-
-//Embarque check in automatico 
-
-Class transporteTerrestre:
-string tipoTransporte  (metro, autocarro, comboio)
-float distância
-Data horário
-
-os transportes terrestres -> guardar numa arvore binaria de pesquisa
+ter um ficheiro para cada aviao com os serviçosCompletos/serviçosRealizar:
+(matricula_serviçosCompletos.txt)
+(matricula_serviçosRealizar.txt)
 
 
+class Load
+load.aviao();//percorre um ficheiro com todos os aviões (matricula capacidade) por linha
+
+C123 123
 
 
+load.voos(C123_Voos.txt); percorre um ficheiro com todos os voos de um aviao (numVoo lotacao dataPartida 		duracaoVoo origem destino)
+
+load.bilhetes(C123_numVoo_Bilhetes.txt);percorre um ficheiro com todos os Bilhetes de um voo (P.nome P.idade P.CC temBagagem bagagemAuto)
+
+load.servicosCompletos(C123_servicosCompletos.txt);percorre um ficheiro com todos os servicosCompletos  de um aviao (tipoServiço, data, funcResponsavel)
+
+load.servicosRealizar(C123_servicosRealizar.txt);percorre um ficheiro com todos os servicosRealizar de um aviao (tipoServiço, data, funcResponsavel)
+
+ver Voo:
+	/NUM VOO
+	/LOTACAO
+	/ETC
+	///////
+	ver bilhetes;id p.nome //nao funciona
+	ver bilhete; por id //nao funciona
+	remover bilhete; //nao funciona
+
+A fazer:
+resolver problema com load de bilhetes
+update em ficheiros
+gerar ficheiro quando nao existem
+
+fazer bst para trasportes terrestres

@@ -15,16 +15,29 @@ namespace Menus {
         cout << "0) Exit" << endl;
     }
 
-    void showMenuAlterarAviao()  {
-        cout << "Escolha o que quer alterar" << endl;
-        cout << "1) Adicionar Voo ao plano de Voos" << endl;
-        cout << "2) Eliminar Voo do plano de Voos" << endl;
-        cout << "3) Ver Voo" << endl;
-        cout << "4) Mostrar todos os Voos" << endl;
-        cout << "5) Adicionar servicos a realizar" << endl;
-        cout << "6) Mostrar proximo servico a realizar" << endl;
-        cout << "7) Realizar servico" << endl;
-        cout << "8) Mostrar os servicos completos" << endl;
+    void showMenuAlterarAviao(){
+        cout << "Menu editar Aviao" << endl;
+        cout << "1) Alterar Voos" << endl;
+        cout << "2) Alterar Servicos" << endl;
+        cout << "0) Voltar Menu Principal" << endl;
+
+    }
+
+    void showMenuAlterarAviaoVoos()  {
+        cout << "Menu editar Voos" << endl;
+        cout << "1) Mostrar todos os Voos" << endl;
+        cout << "2) Ver Voo" << endl;
+        cout << "3) Adicionar Voo ao plano de Voos" << endl;
+        cout << "4) Eliminar Voo do plano de Voos" << endl;
+        cout << "0) Voltar Menu Principal" << endl;
+    }
+
+    void showMenuAlterarAviaoServicos(){
+        cout << "Menu editar Servicos" << endl;
+        cout << "1) Mostrar os servicos completos" << endl;
+        cout << "2) Mostrar proximo servico a realizar" << endl;
+        cout << "3) Adicionar servicos a realizar" << endl;
+        cout << "4) Realizar servico" << endl;
         cout << "0) Voltar Menu Principal" << endl;
     }
 
@@ -60,8 +73,9 @@ namespace Menus {
 
     void showMenuAskTipoServico(){
         cout << "Introduza o tipo de Servico:" << endl;
-        cout << "0) limpeza" << endl;
-        cout << "1) manutencao " << endl;
+        cout << "1) Limpeza" << endl;
+        cout << "2) Manutencao " << endl;
+        cout << "0) Exit" << endl;
 
     }
 

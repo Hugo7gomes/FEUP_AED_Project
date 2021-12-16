@@ -11,7 +11,8 @@ class Carruagem {
     int tamanhoColuna;
 public:
     Carruagem(int filaBagagem, int colunaBagagem);
-    void addBagagem(Bilhete& bilhete);
+    bool addBagagem(Bilhete& bilhete);
+    bool removeBagagem(Bilhete& bilhete);
 };
 
 

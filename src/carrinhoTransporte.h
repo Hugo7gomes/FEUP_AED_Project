@@ -9,8 +9,15 @@
 
 class carrinhoTransporte {
         vector<Carruagem> carruagens;
+        int filaBagagem, colunaBagagem;
 public:
-    carrinhoTransporte(int numCarruagens);
+    carrinhoTransporte();
+    carrinhoTransporte(int numCarruagens, int filaBagagem, int colunaBagagem);
+    bool addBagagemCarruagem(Bilhete &bilhete);
+    int getNumCarruagens();
+    int getNumPilhas();
+    int getNumMalas();
+    bool removeBagagemCarruagem(Bilhete &bilhete);
 };
 
 
