@@ -21,7 +21,7 @@ public:
     bool adicionarTransporte(const TranspTerrestre& t);
     bool removerTransporte(const TranspTerrestre& t);
     bool procurarTransporte();
-    const TranspTerrestre& inputTransporte();
+    void inputTransporte(TranspTerrestre& t);
     void showTransporteMaisProximo();
     void showTransporte(TranspTerrestre t);
     BST<TranspTerrestre>& getTransportesBST();

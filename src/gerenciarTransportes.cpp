@@ -36,7 +36,8 @@ void gerenciarTransportes::showTransporte(TranspTerrestre t) {
 }
 
 bool gerenciarTransportes::procurarTransporte() {
-    const TranspTerrestre& t = inputTransporte();
+    TranspTerrestre t;
+    inputTransporte(t);
     TranspTerrestre aux;
     iteratorBST<TranspTerrestre> it = transportes.begin();
     while(it != transportes.end()){
@@ -57,9 +58,10 @@ bool gerenciarTransportes::procurarTransporte() {
     }
     cout << "Transporte nao foi encontrado. A opcao mais proxima e: " << endl;
     showTransporte(aux);
+    return false;
 }
 
-const TranspTerrestre& gerenciarTransportes::inputTransporte() {
+void gerenciarTransportes::inputTransporte(TranspTerrestre& t) {
     string tipoTransporte;
     float distancia;
     tm horario;
@@ -94,8 +96,9 @@ const TranspTerrestre& gerenciarTransportes::inputTransporte() {
     horario.tm_mon = 1;
     horario.tm_mon = 80;
 
-    const TranspTerrestre t(tipoTransporte, distancia, horario);
-    return t;
+    const TranspTerrestre aux(tipoTransporte, distancia, horario);
+    cout << "TESTE" << endl;
+    t = aux;
 }
 
 BST<TranspTerrestre> &gerenciarTransportes::getTransportesBST() {

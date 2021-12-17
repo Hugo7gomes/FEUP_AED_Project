@@ -12,6 +12,7 @@
 #include "input.h"
 #include "bst.h"
 #include "gerenciarTransportes.h"
+#include "transpTerrestre.h"
 
 
 struct inputStruct{

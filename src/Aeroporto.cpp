@@ -279,12 +279,19 @@ void Aeroporto::tratarTransportes() {
             case 1:
                 Transportes.mostrarTransportes();
                 break;
-            case 2:
-                Transportes.adicionarTransporte(Transportes.inputTransporte());
+            case 2:{
+                TranspTerrestre t;
+                Transportes.inputTransporte(t);
+                Transportes.adicionarTransporte(t);
                 break;
-            case 3:
-                Transportes.removerTransporte(Transportes.inputTransporte());
+            }
+
+            case 3:{
+                TranspTerrestre t;
+                Transportes.inputTransporte(t);
+                Transportes.removerTransporte(t);
                 break;
+            }
             case 4:
                 Transportes.procurarTransporte();
                 break;
