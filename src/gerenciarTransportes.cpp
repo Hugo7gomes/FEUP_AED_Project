@@ -36,6 +36,11 @@ void gerenciarTransportes::showTransporte(TranspTerrestre t) {
 }
 
 bool gerenciarTransportes::procurarTransporte() {
+    if(transportes.isEmpty()){
+        cout << "Nao ha transportes guardados" << endl;
+        cout << endl;
+        return false;
+    }
     TranspTerrestre t;
     inputTransporte(t);
     TranspTerrestre aux;

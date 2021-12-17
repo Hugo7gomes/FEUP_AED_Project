@@ -270,7 +270,7 @@ void Aeroporto::tratarTransportes() {
     while(isRunning){
         Menus::showMenuTransportesTerrestres();
         input::inputInt(inputMenuTransportes);
-        while(inputMenuTransportes != 0 && inputMenuTransportes != 1 && inputMenuTransportes != 2 && inputMenuTransportes != 3){
+        while(inputMenuTransportes != 0 && inputMenuTransportes != 1 && inputMenuTransportes != 2 && inputMenuTransportes != 3 && inputMenuTransportes != 4){
             Menus::showMenuTransportesTerrestres();
             input::inputInt(inputMenuTransportes);
         }
@@ -286,7 +286,7 @@ void Aeroporto::tratarTransportes() {
                 break;
             }
 
-            case 3:{
+            case 3: {
                 TranspTerrestre t;
                 Transportes.inputTransporte(t);
                 Transportes.removerTransporte(t);
