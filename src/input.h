@@ -8,6 +8,7 @@
 
 namespace  input{
     void inputInt(int& num);
+    void inputFloat(float& num);
     string inputStr();
     void inputMatricula(string& str);
 }

@@ -3,9 +3,11 @@
 #include "src/Aeroporto.h"
 #include "src/load.h"
 #include "src/update.h"
+#include "src/gerenciarTransportes.h"
 
 int main() {
-    Aeroporto aeroporto;
+    gerenciarTransportes transportes;
+    Aeroporto aeroporto(transportes);
     Load load;
     Update update;
 

@@ -18,6 +18,18 @@ namespace input{
        }
    }
 
+    void inputFloat(float& num){
+        cin >> num;
+        while (cin.fail())
+        {
+            cout << "Input invalido, insira novamente!" << endl;
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cin >> num;
+
+        }
+   }
+
     string inputStr(){
         string str;
         cin.clear();

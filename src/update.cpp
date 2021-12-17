@@ -53,7 +53,7 @@ void Update::bilhetes(Aeroporto &aeroporto) {
             bilheteFile << a.getMatricula() << "_" << v.getNumVoo() << "_Bilhetes.txt";
 
             ofstream bilheteStream;
-            bilheteStream.open(bilheteFile.str());
+            bilheteStream.open(bilheteFile.str(),ofstream::trunc);
             for(Bilhete& b: v.getBilhetes()){
                 bilheteStream << b.getPassageiro().getNome() << endl;
                 bilheteStream << b.getPassageiro().getIdade() << endl;
@@ -72,7 +72,7 @@ void Update::servicosCompletos(Aeroporto &aeroporto) {
         servicosCompletosFile << a.getMatricula() << "_servicosCompletos.txt";
 
         ofstream servicosCompletosStream;
-        servicosCompletosStream.open(servicosCompletosFile.str());
+        servicosCompletosStream.open(servicosCompletosFile.str(), ofstream::trunc);
         for(Servico& s:a.getservicosCompletos()){
             servicosCompletosStream << s.getTipoServico() << endl;
             servicosCompletosStream << s.getData().tm_mon << endl;
@@ -90,7 +90,7 @@ void Update::servicosRealizar(Aeroporto &aeroporto) {
         servicosRealizarFile << a.getMatricula() << "_servicosRealizar.txt";
 
         ofstream servicosRealizarStream;
-        servicosRealizarStream.open(servicosRealizarFile.str());
+        servicosRealizarStream.open(servicosRealizarFile.str(), ofstream::trunc);
         while(!a.getServicosRealizar().empty()){
             Servico s = a.getServicoRealizar();
             servicosRealizarStream << s.getTipoServico() << endl;
@@ -98,13 +98,28 @@ void Update::servicosRealizar(Aeroporto &aeroporto) {
             servicosRealizarStream << s.getData().tm_mday << endl;
             servicosRealizarStream << s.getData().tm_hour << endl;
             servicosRealizarStream << s.getFuncResponsavel() << endl;
-            cout << s.getFuncResponsavel() << endl;
             a.getServicosRealizar().pop();
         }
         servicosRealizarStream.close();
     }
 }
 
+void Update::transportesTerrestres(Aeroporto aeroporto) {
+    string transportesFile = "transportes.txt";
+    fstream transportesStream;
+
+    transportesStream.open(transportesFile, ofstream::trunc);
+    BSTItrIn<TranspTerrestre> it(aeroporto.getTransportes().getTransportesBST());
+    while(!it.isAtEnd()){
+        transportesStream << it.retrieve().getTipoTransporte() << endl;
+        transportesStream << it.retrieve().getDistancia() << endl;
+        transportesStream << it.retrieve().getHorario().tm_hour << endl;
+        transportesStream << it.retrieve().getHorario().tm_min << endl;
+        it.advance();
+    }
+
+    transportesStream.close();
+}
 Update::Update() {
 
 }
@@ -115,7 +130,10 @@ void Update::run(Aeroporto &aeroporto) {
     bilhetes(aeroporto);
     servicosCompletos(aeroporto);
     servicosRealizar(aeroporto);
+    transportesTerrestres(aeroporto);
 }
+
+
 
 
 

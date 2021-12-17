@@ -93,7 +93,6 @@ void Load::bilhetes(Aeroporto& aeroporto) {
             bilheteStream.open(bilheteFile.str());
             if(bilheteStream.is_open()) {
                 while (getline(bilheteStream, nome)) {
-                    cout << nome << endl;
                     getline(bilheteStream, idade);
                     idadeInt = stoi(idade);
                     getline(bilheteStream, CC);
@@ -189,6 +188,34 @@ void Load::servicosRealizar(Aeroporto &aeroporto) {
     }
 }
 
+void Load::transportesTerrestres(Aeroporto& aeroporto) {
+    string tipoTransporte,distancia,hora,min;
+    tm horario;
+
+    string transportesFile = "transportes.txt";
+    fstream transportesStream;
+
+    transportesStream.open(transportesFile);
+    if(transportesStream.is_open()){
+        while(getline(transportesStream,tipoTransporte)){
+            getline(transportesStream,distancia);
+            getline(transportesStream,hora);
+            getline(transportesStream,min);
+
+            horario.tm_hour = stoi(hora);
+            horario.tm_min = stoi(min);
+            horario.tm_mday = 1;
+            horario.tm_mon = 1;
+            horario.tm_year = 80;
+
+            const TranspTerrestre t(tipoTransporte,stof(distancia),horario);
+            aeroporto.getTransportes().adicionarTransporte(t);
+        }
+    }else{
+        createFile(transportesFile);
+    }
+}
+
 void Load::createFile(string fileName) {
     ofstream createFile;
     createFile.open(fileName);
@@ -201,6 +228,9 @@ void Load::run(Aeroporto &aeroporto) {
     bilhetes(aeroporto);
     servicosCompletos(aeroporto);
     servicosRealizar(aeroporto);
+    transportesTerrestres(aeroporto);
 }
+
+
 
 

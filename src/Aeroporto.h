@@ -10,6 +10,8 @@
 #include "defs.h"
 #include "menus.h"
 #include "input.h"
+#include "bst.h"
+#include "gerenciarTransportes.h"
 
 
 struct inputStruct{
@@ -22,13 +24,16 @@ struct inputStruct{
 
 class Aeroporto {
     list<Aviao> avioes;
-
+    gerenciarTransportes Transportes;
 public:
+    gerenciarTransportes& getTransportes();
+    Aeroporto(gerenciarTransportes Transportes);
+    void tratarTransportes();
+    void tratarAvioes();
     void TratarVoos(Aviao &aviao);
     void TratarServicos(Aviao &aviao);
     void showAvioes();
     void verVoo(Aviao& aviao);
-    int inputNumVoo(Aviao& aviao);
     void verBilhete(Voo& voo);
     void removerBilhete(Voo& voo);
     void mostrarServicoRealizar(Aviao& aviao);

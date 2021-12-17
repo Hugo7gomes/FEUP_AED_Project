@@ -5,13 +5,13 @@
 #include "Aeroporto.h"
 
 struct compareByMatricula{
-    bool operator() (Aviao a, Aviao b){
+    bool operator() (const Aviao &a, const Aviao &b){
         return a.getMatricula() < b.getMatricula();
     }
 };
 
 struct compareByCapacidade{
-    bool operator() (Aviao a, Aviao b){
+    bool operator() (const Aviao &a, const Aviao &b){
         return a.getCapacidade() <= b.getCapacidade();
     }
 };
@@ -97,7 +97,7 @@ void Aeroporto::removeAviao() {
 
 void Aeroporto::deleteVoo(Aviao &aviao) {
     int numVoo;
-    if(aviao.getPlanoVoo().size() == 0){
+    if(aviao.getPlanoVoo().empty()){
         cout << "Nao existem voos" << endl;
         return;
     }
@@ -217,18 +217,18 @@ void Aeroporto::TratarServicos(Aviao &aviao) {
     }
 }
 
-void Aeroporto::run() {
-    bool isRunnig = true;
-    int inputMenu;
+void Aeroporto::tratarAvioes() {
+    bool isRunning = true;
+    int inputMenuAvioes;
 
-    while (isRunnig) {
-        Menus::showMenu();
-        input::inputInt(inputMenu);
-        while (inputMenu != 0 && inputMenu != 1 && inputMenu != 2 && inputMenu != 3 && inputMenu != 4 && inputMenu != 5) {
-            Menus::showMenu();
-            input::inputInt(inputMenu);
+    while (isRunning) {
+        Menus::showMenuAvioes();
+        input::inputInt(inputMenuAvioes);
+        while (inputMenuAvioes != 0 && inputMenuAvioes != 1 && inputMenuAvioes != 2 && inputMenuAvioes != 3 && inputMenuAvioes != 4 && inputMenuAvioes != 5) {
+            Menus::showMenuAvioes();
+            input::inputInt(inputMenuAvioes);
         }
-        switch (inputMenu) {
+        switch (inputMenuAvioes) {
             case 1:
                 showAvioes();
                 break;
@@ -257,7 +257,65 @@ void Aeroporto::run() {
                 comprarBilhetes();
                 break;
             case 0:
-                isRunnig = false;
+                isRunning = false;
+                break;
+        }
+    }
+}
+
+void Aeroporto::tratarTransportes() {
+    int inputMenuTransportes;
+    bool isRunning = true;
+
+    while(isRunning){
+        Menus::showMenuTransportesTerrestres();
+        input::inputInt(inputMenuTransportes);
+        while(inputMenuTransportes != 0 && inputMenuTransportes != 1 && inputMenuTransportes != 2 && inputMenuTransportes != 3){
+            Menus::showMenuTransportesTerrestres();
+            input::inputInt(inputMenuTransportes);
+        }
+
+        switch (inputMenuTransportes) {
+            case 1:
+                Transportes.mostrarTransportes();
+                break;
+            case 2:
+                Transportes.adicionarTransporte(Transportes.inputTransporte());
+                break;
+            case 3:
+                Transportes.removerTransporte(Transportes.inputTransporte());
+                break;
+            case 4:
+                Transportes.procurarTransporte();
+                break;
+            case 0:
+                isRunning = false;
+                break;
+        }
+    }
+}
+
+void Aeroporto::run(){
+    int inputMenu;
+    bool isRunning = true;
+
+    while(isRunning){
+        Menus::showMenu();
+        input::inputInt(inputMenu);
+        while(inputMenu != 0 && inputMenu != 1 && inputMenu != 2){
+            Menus::showMenu();
+            input::inputInt(inputMenu);
+        }
+
+        switch (inputMenu) {
+            case 1:
+                tratarAvioes();
+                break;
+            case 2:
+                tratarTransportes();
+                break;
+            case 0:
+                isRunning = false;
                 break;
         }
     }
@@ -633,14 +691,14 @@ void Aeroporto::criarServicoRealizar(Aviao &aviao) {
     cout << "Introduza o dia em que o servico vai ser realizado:" << endl;
     input::inputInt(data.tm_mday);
     while (data.tm_mday >= 31) {
-        cout << "Input invalido, mes tem que ser entre 1 e 31" << endl;
+        cout << "Input invalido, dia tem que ser entre 1 e 31" << endl;
         input::inputInt(data.tm_mday);
     }
 
     cout << "Introduza a hora em que o servico vai ser realizado:" << endl;
     input::inputInt(data.tm_hour);
     while (data.tm_hour >= 23) {
-        cout << "Input invalido, ano tem que ser entre 0 e 23" << endl;
+        cout << "Input invalido, hora tem que ser entre 0 e 23" << endl;
         input::inputInt(data.tm_hour);
     }
 
@@ -669,6 +727,15 @@ void Aeroporto::ordenarVoos(Aviao &aviao) {
     }
     aviao.ordenarVoos(inputOrdenarVoos);
 }
+
+Aeroporto::Aeroporto(gerenciarTransportes Transportes) {
+    this->Transportes = Transportes;
+}
+
+gerenciarTransportes &Aeroporto::getTransportes() {
+    return  Transportes;
+}
+
 
 
 

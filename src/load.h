@@ -15,10 +15,9 @@ public:
     void bilhetes(Aeroporto& aeroporto);
     void servicosCompletos(Aeroporto& aeroporto);
     void servicosRealizar(Aeroporto& aeroporto);
+    void transportesTerrestres(Aeroporto& aeroporto);
     void run(Aeroporto& aeroporto);
     void createFile(string fileName);
-    //void carrinhoTransporte(Aeroporto& aeroporto);
-
 };
 
 

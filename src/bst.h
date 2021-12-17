@@ -250,8 +250,6 @@ BinaryNode<Comparable>* BST<Comparable>::clone( BinaryNode<Comparable>* t ) cons
 }
 
 
-//----------- iterators ---------
-
 // Postorder iterator
 template <class Comparable>
 class BSTItrPost {
@@ -458,12 +456,5 @@ bool iteratorBST<Comparable>::operator!= (const iteratorBST<Comparable>& it2) co
     return itrStack != it2.itrStack;
 }
 
-//--------------------------------------------------------
-
-//TODO
-template <class Comparable>
-int BST<Comparable>::size(const Comparable& el) const {
-    return -1;
-}
 
 #endif

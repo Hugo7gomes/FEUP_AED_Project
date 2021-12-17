@@ -5,13 +5,27 @@
 #include "menus.h"
 #include "aviao.h"
 namespace Menus {
-    void showMenu()  {
+    void showMenu(){
+    cout << "1) Avioes" << endl;
+    cout << "2) Transportes Terrestres" << endl;
+    cout << "0) Exit" << endl;
+    }
+
+    void showMenuAvioes()  {
         cout << "Aeroporto Lia" << endl;
         cout << "1) Mostrar Avioes" << endl;
         cout << "2) Adicionar Aviao" << endl;
         cout << "3) Apagar Aviao" << endl;
         cout << "4) Editar Aviao" << endl;
         cout << "5) Comprar Bilhetes" << endl;
+        cout << "0) Exit" << endl;
+    }
+
+    void showMenuTransportesTerrestres(){
+        cout << "1) Ver transportes" << endl;
+        cout << "2) Adicionar Transportes" << endl;
+        cout << "3) Remover Transportes" << endl;
+        cout << "4) Procurar Transporte" << endl;
         cout << "0) Exit" << endl;
     }
 

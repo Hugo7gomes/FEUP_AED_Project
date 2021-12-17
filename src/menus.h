@@ -12,7 +12,9 @@ namespace Menus {
     void showMenuAlterarAviao();
     void showMenuAlterarAviaoVoos();
     void showMenuAlterarAviaoServicos();
+    void showMenuAvioes();
     void showMenuVoo(Voo& v);
+    void showMenuTransportesTerrestres();
     void showMenuAskAlterarAviao();
     void showMenuAskTemBagagem();
     void showMenuAskBagagemAuto();
