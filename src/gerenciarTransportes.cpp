@@ -67,12 +67,18 @@ void gerenciarTransportes::inputTransporte(TranspTerrestre& t) {
     tm horario;
 
     cout << "Introduza o tipo de Transporte" << endl;
-    //cout << "Introduza 0 para voltar" << endl;
+    cout << "Introduza 0 para voltar" << endl;
     cin.ignore(1000, '\n');
     tipoTransporte = input::inputStr();
+    if(tipoTransporte == "0"){
+        return;
+    }
     while(tipoTransporte != "metro" && tipoTransporte != "autocarro" && tipoTransporte != "comboio"){
         cout << "Input invalido. Apenas metro, autocarro ou comboio" << endl;
         tipoTransporte = input::inputStr();
+        if(tipoTransporte == "0"){
+            return;
+        }
     }
 
     cout << "Introduza a distancia ao aeroporto" << endl;
@@ -97,7 +103,6 @@ void gerenciarTransportes::inputTransporte(TranspTerrestre& t) {
     horario.tm_mon = 80;
 
     const TranspTerrestre aux(tipoTransporte, distancia, horario);
-    cout << "TESTE" << endl;
     t = aux;
 }
 
