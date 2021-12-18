@@ -9,6 +9,7 @@
 
 namespace Menus {
     void showMenu();
+    void showMenuAeroporto();
     void showMenuAlterarAviao();
     void showMenuAlterarAviaoVoos();
     void showMenuAlterarAviaoServicos();

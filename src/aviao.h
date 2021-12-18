@@ -17,6 +17,7 @@ class Aviao {
     queue<Servico> servicosParaRealizar;
 
 public:
+    Aviao();
     Aviao(string m, int c);
     int getCapacidade() const;
     string getMatricula() const;
@@ -31,9 +32,10 @@ public:
     void realizarServico();
     void mostrarVoos();
     bool eliminarVoo(int numVoo);
-    Voo& procurarVoo();
+    Voo& procurarVoo(int numVoo);
     void ordenarVoos(int inputOrdenarVoos);
     void ordenarServicosCompletos(int inputOrdenarServicosCompletos);
+    bool checkVoo(int numVoo);
 
 };
 

@@ -5,18 +5,19 @@
 #ifndef PROJECT_LOAD_H
 #define PROJECT_LOAD_H
 
-#include "Aeroporto.h"
+#include "gerenciarAeroportos.h"
 
 class Load {
 public:
     Load();
+    void aeroporto(gerenciarAeroportos &gerenciarAeroportos);
     void avioes(Aeroporto & aeroporto);
     void voos(Aeroporto& aeroporto);//ler os voos do aviao vooFile
     void bilhetes(Aeroporto& aeroporto);
     void servicosCompletos(Aeroporto& aeroporto);
     void servicosRealizar(Aeroporto& aeroporto);
     void transportesTerrestres(Aeroporto& aeroporto);
-    void run(Aeroporto& aeroporto);
+    void run(gerenciarAeroportos &gerenciarAeroportos);
     void createFile(string fileName);
 };
 

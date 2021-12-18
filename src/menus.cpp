@@ -6,13 +6,20 @@
 #include "aviao.h"
 namespace Menus {
     void showMenu(){
-    cout << "1) Avioes" << endl;
-    cout << "2) Transportes Terrestres" << endl;
-    cout << "0) Exit" << endl;
+        cout << "1) Ver aeroportos" << endl;
+        cout << "2) Adicionar aeroporto" << endl;
+        cout << "3) Remover aeroporto" << endl;
+        cout << "4) Ver aeroporto" << endl;
+        cout << "0) Exit" << endl;
+    }
+    void showMenuAeroporto(){
+        cout << "1) Avioes" << endl;
+        cout << "2) Transportes Terrestres" << endl;
+        cout << "0) Exit" << endl;
     }
 
     void showMenuAvioes()  {
-        cout << "Aeroporto Lia" << endl;
+
         cout << "1) Mostrar Avioes" << endl;
         cout << "2) Adicionar Aviao" << endl;
         cout << "3) Apagar Aviao" << endl;

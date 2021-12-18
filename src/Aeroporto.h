@@ -24,11 +24,13 @@ struct inputStruct{
 
 
 class Aeroporto {
+    string id;
     list<Aviao> avioes;
     gerenciarTransportes Transportes;
 public:
     gerenciarTransportes& getTransportes();
-    Aeroporto(gerenciarTransportes Transportes);
+    string getId();
+    Aeroporto(string id);
     void tratarTransportes();
     void tratarAvioes();
     void TratarVoos(Aviao &aviao);
@@ -42,17 +44,19 @@ public:
     void criarServicoRealizar(Aviao& aviao);
     void realizarServico(Aviao& aviao);
     list<Aviao>& getAvioes();
-    Aviao& procurarAviao();
+    Aviao& procurarAviao(string matricula);
     inputStruct inputMatriculaCapacidade();
     void addAviao(string matricula, int c);
+    void adicionarAviao();
     void removeAviao();
     void comprarBilhetes();
-    void alterarAviao(Aviao& aviao);
+    void alterarAviao();
     void criarVoo(Aviao& aviao);
     void deleteVoo(Aviao& aviao);
     void ordenarVoos(Aviao& aviao);
     Passageiro criarPassageiro();
     void run();
+    bool checkAviao(string matricula);
 
 };
 

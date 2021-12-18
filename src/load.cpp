@@ -5,12 +5,31 @@
 #include "load.h"
 #include "defs.h"
 
+void Load::aeroporto(gerenciarAeroportos &gerenciarAeroportos) {
+    string idAeroporto;
+    ostringstream aeroportosFile;
+    string fileName = "aeroportos.txt";
+
+    ifstream aeroportosStream;
+    aeroportosStream.open(fileName);
+    if(aeroportosStream.is_open()){
+        while(getline(aeroportosStream, idAeroporto)){
+            Aeroporto a(idAeroporto);
+            gerenciarAeroportos.adicionarAeroportoFicheiro(a);
+        }
+    }else{
+        createFile(fileName);
+    }
+    aeroportosStream.close();
+}
+
 void Load::avioes(Aeroporto& aeroporto) {
     string matriculaAviao;
     string capacidadeAviao;
     int capacidadeAviaoInt;
-
-    string fileName = "avioes.txt";
+    ostringstream avioesFile;
+    avioesFile << aeroporto.getId() << "_Avioes.txt";
+    string fileName = avioesFile.str();
 
     ifstream avioesStream;
     avioesStream.open(fileName);
@@ -33,7 +52,7 @@ void Load::avioes(Aeroporto& aeroporto) {
 void Load::voos(Aeroporto& aeroporto) {
     for(Aviao& a : aeroporto.getAvioes()){
         ostringstream vooFile;
-        vooFile << a.getMatricula() << "_Voos.txt";
+        vooFile <<aeroporto.getId() << "_" << a.getMatricula() << "_Voos.txt";
 
         int numVooInt, lotacaoInt;
         string numVoo, lotacao, line_file, origem,destino, numCarruagens, numPilhas, numMalas;
@@ -83,7 +102,7 @@ void Load::bilhetes(Aeroporto& aeroporto) {
     for(Aviao& a : aeroporto.getAvioes()){
         for(Voo& v : a.getPlanoVoo()){
             ostringstream bilheteFile;
-            bilheteFile << a.getMatricula() << "_" << v.getNumVoo() << "_Bilhetes.txt";
+            bilheteFile <<aeroporto.getId() << "_" << a.getMatricula() << "_" << v.getNumVoo() << "_Bilhetes.txt";
 
             string nome, idade, CC, temBagagemStr, bagagemAutoStr;
             int idadeInt, CCInt;
@@ -129,7 +148,7 @@ Load::Load() {
 void Load::servicosCompletos(Aeroporto &aeroporto) {
     for(Aviao& a: aeroporto.getAvioes()){
         ostringstream servicosCompletosFile;
-        servicosCompletosFile << a.getMatricula() << "_servicosCompletos.txt";
+        servicosCompletosFile <<aeroporto.getId() << "_" <<  a.getMatricula() << "_ServicosCompletos.txt";
 
         string tipoServico, funcResponsavel, dataStr;
         tm data;
@@ -161,7 +180,7 @@ void Load::servicosCompletos(Aeroporto &aeroporto) {
 void Load::servicosRealizar(Aeroporto &aeroporto) {
     for(Aviao& a: aeroporto.getAvioes()){
         ostringstream servicosRealizarFile;
-        servicosRealizarFile << a.getMatricula() << "_servicosRealizar.txt";
+        servicosRealizarFile <<aeroporto.getId() << "_" << a.getMatricula() << "_ServicosRealizar.txt";
 
         string tipoServico, funcResponsavel, dataStr;
         tm data;
@@ -188,11 +207,15 @@ void Load::servicosRealizar(Aeroporto &aeroporto) {
     }
 }
 
+
+
+
 void Load::transportesTerrestres(Aeroporto& aeroporto) {
     string tipoTransporte,distancia,hora,min;
     tm horario;
-
-    string transportesFile = "transportes.txt";
+    ostringstream fileName;
+    fileName << aeroporto.getId() << "_Transportes.txt";
+    string transportesFile = fileName.str();
     fstream transportesStream;
 
     transportesStream.open(transportesFile);
@@ -216,20 +239,29 @@ void Load::transportesTerrestres(Aeroporto& aeroporto) {
     }
 }
 
+
+
+
 void Load::createFile(string fileName) {
     ofstream createFile;
     createFile.open(fileName);
     createFile.close();
 }
 
-void Load::run(Aeroporto &aeroporto) {
-    avioes(aeroporto);
-    voos(aeroporto);
-    bilhetes(aeroporto);
-    servicosCompletos(aeroporto);
-    servicosRealizar(aeroporto);
-    transportesTerrestres(aeroporto);
+
+
+void Load::run(gerenciarAeroportos &gerenciarAeroportos) {
+    aeroporto(gerenciarAeroportos);
+    for(Aeroporto& aeroporto : gerenciarAeroportos.getAeroportos()) {
+        avioes(aeroporto);
+        voos(aeroporto);
+        bilhetes(aeroporto);
+        servicosCompletos(aeroporto);
+        servicosRealizar(aeroporto);
+        transportesTerrestres(aeroporto);
+    }
 }
+
 
 
 

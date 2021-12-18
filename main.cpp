@@ -3,17 +3,15 @@
 #include "src/Aeroporto.h"
 #include "src/load.h"
 #include "src/update.h"
-#include "src/gerenciarTransportes.h"
 
 int main() {
-    gerenciarTransportes transportes;
-    Aeroporto aeroporto(transportes);
+    gerenciarAeroportos aeroportos;
     Load load;
     Update update;
 
-    load.run(aeroporto);
-    aeroporto.run();
-    update.run(aeroporto);
+    load.run(aeroportos);
+    aeroportos.run();
+    update.run(aeroportos);
 
 
     return 0;

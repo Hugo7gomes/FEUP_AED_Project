@@ -4,29 +4,43 @@
 
 #include "update.h"
 
-void Update::avioes(Aeroporto &aeroporto) {
-    ofstream avioesStream;
-    avioesStream.open("avioes.txt", ofstream::trunc);
 
-    if(avioesStream.is_open()){
-        for(Aviao& a: aeroporto.getAvioes()){
-            avioesStream << a.getMatricula() << endl;
-            avioesStream << a.getCapacidade() << endl;
-        }
+void Update::aeroporto(gerenciarAeroportos &gerenciarAeroportos) {
+    ostringstream aeroportosFile;
+    ofstream aeroportosStream;
+    aeroportosStream.open("aeroportos.txt", ofstream::trunc);
+    for (Aeroporto &a: gerenciarAeroportos.getAeroportos()) {
+        aeroportosStream << a.getId() << endl;
     }
+    aeroportosStream.close();
+}
+
+
+void Update::avioes(Aeroporto &aeroporto) {
+    ostringstream avioesFile;
+    avioesFile << aeroporto.getId() << "_Avioes.txt";
+    string fileName = avioesFile.str();
+    ofstream avioesStream;
+    avioesStream.open(fileName, ofstream::trunc);
+    for (Aviao &a: aeroporto.getAvioes()) {
+        avioesStream << a.getMatricula() << endl;
+        avioesStream << a.getCapacidade() << endl;
+    }
+
+    avioesStream.close();
 }
 
 
 void Update::voos(Aeroporto &aeroporto) {
 
-    for(Aviao& a:aeroporto.getAvioes()){
+    for (Aviao &a: aeroporto.getAvioes()) {
         ostringstream vooFile;
-        vooFile << a.getMatricula() << "_Voos.txt";
+        vooFile << aeroporto.getId() << "_" << a.getMatricula() << "_Voos.txt";
 
         ofstream voosStream;
         voosStream.open(vooFile.str(), ofstream::trunc);
 
-        for(Voo& v:a.getPlanoVoo()){
+        for (Voo &v: a.getPlanoVoo()) {
             voosStream << v.getNumVoo() << endl;
             voosStream << v.getLotacao() << endl;
             voosStream << v.getDataPartida().tm_year << endl;
@@ -47,18 +61,18 @@ void Update::voos(Aeroporto &aeroporto) {
 }
 
 void Update::bilhetes(Aeroporto &aeroporto) {
-    for(Aviao& a:aeroporto.getAvioes()){
-        for(Voo& v: a.getPlanoVoo()){
+    for (Aviao &a: aeroporto.getAvioes()) {
+        for (Voo &v: a.getPlanoVoo()) {
             ostringstream bilheteFile;
-            bilheteFile << a.getMatricula() << "_" << v.getNumVoo() << "_Bilhetes.txt";
+            bilheteFile << aeroporto.getId() << "_" << a.getMatricula() << "_" << v.getNumVoo() << "_Bilhetes.txt";
 
             ofstream bilheteStream;
-            bilheteStream.open(bilheteFile.str(),ofstream::trunc);
-            for(Bilhete& b: v.getBilhetes()){
+            bilheteStream.open(bilheteFile.str(), ofstream::trunc);
+            for (Bilhete &b: v.getBilhetes()) {
                 bilheteStream << b.getPassageiro().getNome() << endl;
                 bilheteStream << b.getPassageiro().getIdade() << endl;
                 bilheteStream << b.getPassageiro().getCC() << endl;
-                bilheteStream << b.gettemBagagem() <<endl;
+                bilheteStream << b.gettemBagagem() << endl;
                 bilheteStream << b.getBagagemAuto() << endl;
             }
             bilheteStream.close();
@@ -67,13 +81,13 @@ void Update::bilhetes(Aeroporto &aeroporto) {
 }
 
 void Update::servicosCompletos(Aeroporto &aeroporto) {
-    for(Aviao& a:aeroporto.getAvioes()){
+    for (Aviao &a: aeroporto.getAvioes()) {
         ostringstream servicosCompletosFile;
-        servicosCompletosFile << a.getMatricula() << "_servicosCompletos.txt";
+        servicosCompletosFile << aeroporto.getId() << "_" << a.getMatricula() << "_ServicosCompletos.txt";
 
         ofstream servicosCompletosStream;
         servicosCompletosStream.open(servicosCompletosFile.str(), ofstream::trunc);
-        for(Servico& s:a.getservicosCompletos()){
+        for (Servico &s: a.getservicosCompletos()) {
             servicosCompletosStream << s.getTipoServico() << endl;
             servicosCompletosStream << s.getData().tm_mon << endl;
             servicosCompletosStream << s.getData().tm_mday << endl;
@@ -85,13 +99,13 @@ void Update::servicosCompletos(Aeroporto &aeroporto) {
 }
 
 void Update::servicosRealizar(Aeroporto &aeroporto) {
-    for(Aviao& a:aeroporto.getAvioes()){
+    for (Aviao &a: aeroporto.getAvioes()) {
         ostringstream servicosRealizarFile;
-        servicosRealizarFile << a.getMatricula() << "_servicosRealizar.txt";
+        servicosRealizarFile << aeroporto.getId() << "_" << a.getMatricula() << "_ServicosRealizar.txt";
 
         ofstream servicosRealizarStream;
         servicosRealizarStream.open(servicosRealizarFile.str(), ofstream::trunc);
-        while(!a.getServicosRealizar().empty()){
+        while (!a.getServicosRealizar().empty()) {
             Servico s = a.getServicoRealizar();
             servicosRealizarStream << s.getTipoServico() << endl;
             servicosRealizarStream << s.getData().tm_mon << endl;
@@ -104,13 +118,17 @@ void Update::servicosRealizar(Aeroporto &aeroporto) {
     }
 }
 
-void Update::transportesTerrestres(Aeroporto aeroporto) {
-    string transportesFile = "transportes.txt";
-    fstream transportesStream;
+void Update::transportesTerrestres(Aeroporto &aeroporto) {
+    string tipoTransporte,distancia,hora,min;
+    tm horario;
+    ostringstream fileName;
+    fileName << aeroporto.getId() << "_Transportes.txt";
+    string transportesFile = fileName.str();
+    ofstream transportesStream;
 
     transportesStream.open(transportesFile, ofstream::trunc);
     BSTItrIn<TranspTerrestre> it(aeroporto.getTransportes().getTransportesBST());
-    while(!it.isAtEnd()){
+    while (!it.isAtEnd()) {
         transportesStream << it.retrieve().getTipoTransporte() << endl;
         transportesStream << it.retrieve().getDistancia() << endl;
         transportesStream << it.retrieve().getHorario().tm_hour << endl;
@@ -120,18 +138,24 @@ void Update::transportesTerrestres(Aeroporto aeroporto) {
 
     transportesStream.close();
 }
+
 Update::Update() {
 
 }
 
-void Update::run(Aeroporto &aeroporto) {
-    avioes(aeroporto);
-    voos(aeroporto);
-    bilhetes(aeroporto);
-    servicosCompletos(aeroporto);
-    servicosRealizar(aeroporto);
-    transportesTerrestres(aeroporto);
+void Update::run(gerenciarAeroportos &gerenciarAeroportos) {
+    aeroporto(gerenciarAeroportos);
+    for (Aeroporto &aeroporto: gerenciarAeroportos.getAeroportos()) {
+        avioes(aeroporto);
+        voos(aeroporto);
+        bilhetes(aeroporto);
+        servicosCompletos(aeroporto);
+        servicosRealizar(aeroporto);
+        transportesTerrestres(aeroporto);
+    }
 }
+
+
 
 
 

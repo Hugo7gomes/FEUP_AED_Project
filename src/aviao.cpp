@@ -4,7 +4,7 @@
 
 #include "aviao.h"
 
-Aviao::Aviao(string m, int c) : matricula(m), capacidade(c){
+Aviao::Aviao(string m, int c) : matricula(m), capacidade(c) {
 }
 
 int Aviao::getCapacidade() const {
@@ -15,7 +15,7 @@ string Aviao::getMatricula() const {
     return matricula;
 }
 
-list <Voo>& Aviao::getPlanoVoo() {
+list <Voo> &Aviao::getPlanoVoo() {
     return planoVoo;
 }
 
@@ -36,8 +36,8 @@ void Aviao::realizarServico() {
 
 bool Aviao::eliminarVoo(int numVoo) {
     list<Voo>::iterator iteradorVoo = planoVoo.begin();
-    for(iteradorVoo; iteradorVoo != planoVoo.end(); iteradorVoo++){
-        if(iteradorVoo->getNumVoo() == numVoo){
+    for (iteradorVoo; iteradorVoo != planoVoo.end(); iteradorVoo++) {
+        if (iteradorVoo->getNumVoo() == numVoo) {
             planoVoo.erase(iteradorVoo);
             return true;
         }
@@ -46,28 +46,22 @@ bool Aviao::eliminarVoo(int numVoo) {
 }
 
 void Aviao::mostrarVoos() {
-    if(planoVoo.size() == 0){
+    if (planoVoo.size() == 0) {
         cout << "Este aviao nao possui voos";
         return;
     }
-    for(Voo& voo : planoVoo){
+    for (Voo &voo: planoVoo) {
         cout << voo.getNumVoo() << endl;
     }
 }
 
-Voo& Aviao::procurarVoo() {
-    int numVoo;
-    cout << "Introduza o numero de Voo" << endl;
-
-    while(true){
-        input::inputInt(numVoo);
-        for(Voo& v : planoVoo){
-            if(v.getNumVoo() == numVoo){
-                return v;
-            }
+Voo& Aviao::procurarVoo(int numVoo) {
+    for (Voo &v: planoVoo) {
+        if (v.getNumVoo() == numVoo) {
+            return v;
         }
-        cout << "Numero de Voo nao existe" << endl;
     }
+
 }
 
 list <Servico> &Aviao::getservicosCompletos() {
@@ -86,58 +80,58 @@ void Aviao::addServicoCompleto(Servico &s) {
     servicosCompletos.push_back(s);
 }
 
-queue <Servico>& Aviao::getServicosRealizar() {
+queue <Servico> &Aviao::getServicosRealizar() {
     return servicosParaRealizar;
 }
 
-struct compareByNumVoo{
-    bool operator()(Voo a, Voo b){
+struct compareByNumVoo {
+    bool operator()(Voo a, Voo b) {
         return a.getNumVoo() < b.getNumVoo();
     }
 };
 
-struct compareByDataPartida{
-    bool operator() (Voo a, Voo b){
+struct compareByDataPartida {
+    bool operator()(Voo a, Voo b) {
         struct tm tm1 = a.getDataPartida();
         struct tm tm2 = b.getDataPartida();
         time_t t1 = mktime(&tm1);
         time_t t2 = mktime(&tm2);
-        return difftime(t1,t2) <0.0;
+        return difftime(t1, t2) < 0.0;
     }
 };
 
-struct compareByDuracaoVoo{
-    bool operator() (Voo a, Voo b){
+struct compareByDuracaoVoo {
+    bool operator()(Voo a, Voo b) {
         struct tm tm1 = a.getDuracaoVoo();
-        tm1.tm_mday=1;
-        tm1.tm_mon =1;
+        tm1.tm_mday = 1;
+        tm1.tm_mon = 1;
         tm1.tm_year = 80;
         struct tm tm2 = b.getDuracaoVoo();
-        tm2.tm_mday=1;
-        tm2.tm_mon =1;
+        tm2.tm_mday = 1;
+        tm2.tm_mon = 1;
         tm2.tm_year = 80;
         time_t t1 = mktime(&tm1);
         time_t t2 = mktime(&tm2);
-        return difftime(t1,t2) >0.0;
+        return difftime(t1, t2) > 0.0;
     }
 };
 
-struct compareByOrigem{
-    bool operator() (Voo& a, Voo& b){
+struct compareByOrigem {
+    bool operator()(Voo &a, Voo &b) {
         return a.getOrigem() < b.getOrigem();
     }
 };
 
-struct compareByDestino{
-    bool operator() (Voo& a, Voo& b){
+struct compareByDestino {
+    bool operator()(Voo &a, Voo &b) {
         return a.getDestino() < b.getDestino();
     }
 };
 
 
-void Aviao::ordenarVoos( int inputOrdenarVoos) {
+void Aviao::ordenarVoos(int inputOrdenarVoos) {
 
-    switch(inputOrdenarVoos){
+    switch (inputOrdenarVoos) {
         case 1:
             planoVoo.sort(compareByNumVoo());
             break;
@@ -156,26 +150,26 @@ void Aviao::ordenarVoos( int inputOrdenarVoos) {
     }
 }
 
-struct compareByTipoServico{
-    bool operator() (Servico& a, Servico& b){
+struct compareByTipoServico {
+    bool operator()(Servico &a, Servico &b) {
         return a.getTipoServico() < b.getTipoServico();
     }
 };
 
-struct compareByData{
-    bool operator() (Servico& a, Servico& b){
+struct compareByData {
+    bool operator()(Servico &a, Servico &b) {
         struct tm tm1 = a.getData();
         struct tm tm2 = b.getData();
         tm1.tm_year = 80;
         tm2.tm_year = 80;
         time_t t1 = mktime(&tm1);
         time_t t2 = mktime(&tm2);
-        return difftime(t1,t2) <0.0;
+        return difftime(t1, t2) < 0.0;
     }
 };
 
-struct compareByfuncResponsavel{
-    bool operator() (Servico& a, Servico& b){
+struct compareByfuncResponsavel {
+    bool operator()(Servico &a, Servico &b) {
         return a.getFuncResponsavel() < b.getFuncResponsavel();
 
     }
@@ -183,7 +177,7 @@ struct compareByfuncResponsavel{
 
 void Aviao::ordenarServicosCompletos(int inputOrdenarServicosCompletos) {
 
-    switch(inputOrdenarServicosCompletos){
+    switch (inputOrdenarServicosCompletos) {
         case 1:
             servicosCompletos.sort(compareByTipoServico());
             break;
@@ -195,6 +189,17 @@ void Aviao::ordenarServicosCompletos(int inputOrdenarServicosCompletos) {
             break;
     }
 }
+
+bool Aviao::checkVoo(int numVoo) {
+    for (Voo &v: planoVoo) {
+        if (v.getNumVoo() == numVoo) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 
 

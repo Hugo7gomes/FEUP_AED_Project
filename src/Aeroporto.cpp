@@ -4,18 +4,17 @@
 
 #include "Aeroporto.h"
 
-struct compareByMatricula{
-    bool operator() (const Aviao &a, const Aviao &b){
+struct compareByMatricula {
+    bool operator()(const Aviao &a, const Aviao &b) {
         return a.getMatricula() < b.getMatricula();
     }
 };
 
-struct compareByCapacidade{
-    bool operator() (const Aviao &a, const Aviao &b){
+struct compareByCapacidade {
+    bool operator()(const Aviao &a, const Aviao &b) {
         return a.getCapacidade() <= b.getCapacidade();
     }
 };
-
 
 
 void Aeroporto::showAvioes() {
@@ -27,13 +26,13 @@ void Aeroporto::showAvioes() {
         Menus::showMenuAskOrdenacaoAvioes();
         int inputOrdenacaoAvioes;
         input::inputInt(inputOrdenacaoAvioes);
-        while(inputOrdenacaoAvioes != 1 && inputOrdenacaoAvioes != 2){
+        while (inputOrdenacaoAvioes != 1 && inputOrdenacaoAvioes != 2) {
             input::inputInt(inputOrdenacaoAvioes);
         }
 
-        if(inputOrdenacaoAvioes == 1){
+        if (inputOrdenacaoAvioes == 1) {
             avioes.sort(compareByMatricula());
-        }else{
+        } else {
             avioes.sort(compareByCapacidade());
         }
 
@@ -49,36 +48,61 @@ void Aeroporto::showAvioes() {
             Menus::showMenuAskAlterarAviao();
         }
         if (inputAlterarAviao == 1) {
-            alterarAviao(procurarAviao());
+            alterarAviao();
         }
     }
 }
 
 void Aeroporto::addAviao(string matricula, int c) {
     Aviao aviao(matricula, c);
-
     avioes.push_back(aviao);
 }
+
+void Aeroporto::adicionarAviao() {
+    string matricula;
+    int capacidade;
+    cout << "Introduza matricula do aviao" << endl;
+    cin.ignore(1000, '\n');
+    matricula = input::inputStr();
+    if (matricula == "0") {
+        return;
+    }
+    while (checkAviao(matricula)) {
+        cout << "Aviao ja existe" << endl;
+        matricula = input::inputStr();
+        if (matricula == "0") {
+            return;
+        }
+    }
+
+
+    cout << "Introduza a capacidade do Aviao" << endl;
+    input::inputInt(capacidade);
+
+    Aviao aviao(matricula, capacidade);
+    avioes.push_back(aviao);
+}
+
 
 void Aeroporto::removeAviao() {
     cout << "Introduza matricula, 0 para voltar" << endl;
     string matricula;
     input::inputMatricula(matricula);
-    if(matricula == "0")
+    if (matricula == "0")
         return;
     bool checkMatricula = false;
-    for(Aviao& a: avioes ) {
+    for (Aviao &a: avioes) {
         if (a.getMatricula() == matricula) {
             checkMatricula = true;
             break;
         }
     }
-    while(!checkMatricula){
+    while (!checkMatricula) {
         cout << "Matricula nao existe" << endl;
         input::inputMatricula(matricula);
-        if(matricula == "0")
+        if (matricula == "0")
             return;
-        for(Aviao& a: avioes ) {
+        for (Aviao &a: avioes) {
             if (a.getMatricula() == matricula) {
                 checkMatricula = true;
                 break;
@@ -97,19 +121,19 @@ void Aeroporto::removeAviao() {
 
 void Aeroporto::deleteVoo(Aviao &aviao) {
     int numVoo;
-    if(aviao.getPlanoVoo().empty()){
+    if (aviao.getPlanoVoo().empty()) {
         cout << "Nao existem voos" << endl;
         return;
     }
     cout << "Introduza o numero de Voo a apagar" << endl;
     input::inputInt(numVoo);
-    if(numVoo == 0){
+    if (numVoo == 0) {
         return;
     }
-    while(!aviao.eliminarVoo(numVoo)) {
+    while (!aviao.eliminarVoo(numVoo)) {
         cout << "Voo nao existe" << endl;
         input::inputInt(numVoo);
-        if(numVoo == 0){
+        if (numVoo == 0) {
             return;
         }
     }
@@ -118,15 +142,33 @@ void Aeroporto::deleteVoo(Aviao &aviao) {
 }
 
 
+void Aeroporto::alterarAviao() {
+    string matricula;
+    int capacidade;
+    cout << "Introduza matricula do aviao" << endl;
+    cin.ignore(1000, '\n');
+    matricula = input::inputStr();
+    if (matricula == "0") {
+        return;
+    }
+    while (!checkAviao(matricula)) {
+        cout << "Aviao nao existe" << endl;
+        matricula = input::inputStr();
+        if (matricula == "0") {
+            return;
+        }
+    }
 
-void Aeroporto::alterarAviao(Aviao &aviao) {
+
+    Aviao &aviao = procurarAviao(matricula);
+
 
     bool isAlterarAviao = true;
     int inputMenuAlterarAviao;
     while (isAlterarAviao) {
         Menus::showMenuAlterarAviao();
         input::inputInt(inputMenuAlterarAviao);
-        while (inputMenuAlterarAviao != 0 && inputMenuAlterarAviao != 1 && inputMenuAlterarAviao != 2){
+        while (inputMenuAlterarAviao != 0 && inputMenuAlterarAviao != 1 && inputMenuAlterarAviao != 2) {
 
             Menus::showMenuAlterarAviao();
             input::inputInt(inputMenuAlterarAviao);
@@ -168,6 +210,10 @@ void Aeroporto::TratarVoos(Aviao &aviao) {
                 break;
 
             case 2:
+                if(aviao.getPlanoVoo().empty()){
+                    cout << "Nao existem voos neste aviao" << endl;
+                    break;
+                }
                 verVoo(aviao);
                 break;
 
@@ -192,7 +238,7 @@ void Aeroporto::TratarServicos(Aviao &aviao) {
         Menus::showMenuAlterarAviaoServicos();
         input::inputInt(inputMenuAlterarServico);
         while (inputMenuAlterarServico != 0 && inputMenuAlterarServico != 1 && inputMenuAlterarServico != 2 &&
-                inputMenuAlterarServico != 3 && inputMenuAlterarServico != 4) {
+               inputMenuAlterarServico != 3 && inputMenuAlterarServico != 4) {
 
             Menus::showMenuAlterarAviaoServicos();
             input::inputInt(inputMenuAlterarServico);
@@ -222,9 +268,12 @@ void Aeroporto::tratarAvioes() {
     int inputMenuAvioes;
 
     while (isRunning) {
+        cout << "Aeroporto " << id << endl;
         Menus::showMenuAvioes();
         input::inputInt(inputMenuAvioes);
-        while (inputMenuAvioes != 0 && inputMenuAvioes != 1 && inputMenuAvioes != 2 && inputMenuAvioes != 3 && inputMenuAvioes != 4 && inputMenuAvioes != 5) {
+        while (inputMenuAvioes != 0 && inputMenuAvioes != 1 && inputMenuAvioes != 2 && inputMenuAvioes != 3 &&
+               inputMenuAvioes != 4 && inputMenuAvioes != 5) {
+            cout << "Aeroporto " << id << endl;
             Menus::showMenuAvioes();
             input::inputInt(inputMenuAvioes);
         }
@@ -233,26 +282,26 @@ void Aeroporto::tratarAvioes() {
                 showAvioes();
                 break;
             case 2: {
-                struct inputStruct informacaoAviao = inputMatriculaCapacidade();
-                addAviao(informacaoAviao.matricula, informacaoAviao.capacidade);
+                adicionarAviao();
                 break;
             }
             case 3:
-                if(avioes.size() == 0){
+                if (avioes.size() == 0) {
                     cout << "Atualmente, nao existem avioes neste aeroporto" << endl;
                     cout << endl;
                     break;
                 }
                 removeAviao();
                 break;
-            case 4:
-                if(avioes.size() == 0){
+            case 4: {
+                if (avioes.size() == 0) {
                     cout << "Atualmente, nao existem avioes neste aeroporto" << endl;
                     cout << endl;
                     break;
                 }
-                alterarAviao(procurarAviao());
+                alterarAviao();
                 break;
+            }
             case 5:
                 comprarBilhetes();
                 break;
@@ -267,10 +316,11 @@ void Aeroporto::tratarTransportes() {
     int inputMenuTransportes;
     bool isRunning = true;
 
-    while(isRunning){
+    while (isRunning) {
         Menus::showMenuTransportesTerrestres();
         input::inputInt(inputMenuTransportes);
-        while(inputMenuTransportes != 0 && inputMenuTransportes != 1 && inputMenuTransportes != 2 && inputMenuTransportes != 3 && inputMenuTransportes != 4){
+        while (inputMenuTransportes != 0 && inputMenuTransportes != 1 && inputMenuTransportes != 2 &&
+               inputMenuTransportes != 3 && inputMenuTransportes != 4) {
             Menus::showMenuTransportesTerrestres();
             input::inputInt(inputMenuTransportes);
         }
@@ -279,7 +329,7 @@ void Aeroporto::tratarTransportes() {
             case 1:
                 Transportes.mostrarTransportes();
                 break;
-            case 2:{
+            case 2: {
                 TranspTerrestre t;
                 Transportes.inputTransporte(t);
                 Transportes.adicionarTransporte(t);
@@ -302,15 +352,15 @@ void Aeroporto::tratarTransportes() {
     }
 }
 
-void Aeroporto::run(){
+void Aeroporto::run() {
     int inputMenu;
     bool isRunning = true;
 
-    while(isRunning){
-        Menus::showMenu();
+    while (isRunning) {
+        Menus::showMenuAeroporto();
         input::inputInt(inputMenu);
-        while(inputMenu != 0 && inputMenu != 1 && inputMenu != 2){
-            Menus::showMenu();
+        while (inputMenu != 0 && inputMenu != 1 && inputMenu != 2) {
+            Menus::showMenuAeroporto();
             input::inputInt(inputMenu);
         }
 
@@ -328,18 +378,11 @@ void Aeroporto::run(){
     }
 }
 
-Aviao &Aeroporto::procurarAviao() {
-    string matriculaAlterar;
+Aviao &Aeroporto::procurarAviao(string matricula) {
 
-    while (true) {
-        cout << "Introduza matricula de aviao a alterar" << endl;
-        input::inputMatricula(matriculaAlterar);
-
-        for (Aviao &a: avioes) {
-
-            if (a.getMatricula() == matriculaAlterar) {
-                return a;
-            }
+    for (Aviao &a: avioes) {
+        if (a.getMatricula() == matricula) {
+            return a;
         }
     }
 }
@@ -353,13 +396,13 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     cout << "Introduza o numero de Voo, 0 para voltar" << endl;
 
     bool checkNumVoo;
-    do{
+    do {
         checkNumVoo = false;
         input::inputInt(numVoo);
-        if(numVoo == 0){
+        if (numVoo == 0) {
             return;
         }
-        for(Voo& v: aviao.getPlanoVoo()) {
+        for (Voo &v: aviao.getPlanoVoo()) {
             if (v.getNumVoo() == numVoo) {
                 cout << "Numero de Voo ja existe, escolha outra" << endl;
                 checkNumVoo = true;
@@ -372,23 +415,23 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     int ano;
     cout << "Introduza o ano da data de Partida" << endl;
     input::inputInt(ano);
-    while (ano< 2020) {
-        cout <<"Input invalido, insira novamente!" << endl;
+    while (ano < 2020) {
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(ano);
     }
-    dataPartida.tm_year = ano-1900;
+    dataPartida.tm_year = ano - 1900;
 
     cout << "Introduza o mes da data de Partida" << endl;
     input::inputInt(dataPartida.tm_mon);
     while (dataPartida.tm_mon > 12) {
-        cout <<"Input invalido, insira novamente!" << endl;
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(dataPartida.tm_mon);
     }
 
     cout << "Introduza o dia da data de Partida" << endl;
     input::inputInt(dataPartida.tm_mday);
     while (dataPartida.tm_mday > 31) {
-        cout <<"Input invalido, insira novamente!" << endl;
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(dataPartida.tm_mday);
     }
 
@@ -396,7 +439,7 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     cout << "Introduza a hora da data de Partida" << endl;
     input::inputInt(dataPartida.tm_hour);
     while (dataPartida.tm_hour > 23) {
-        cout <<"Input invalido, insira novamente!" << endl;
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(dataPartida.tm_hour);
     }
 
@@ -404,7 +447,7 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     cout << "Introduza os min da data de Partida" << endl;
     input::inputInt(dataPartida.tm_min);
     while (dataPartida.tm_min > 60) {
-        cout <<"Input invalido, insira novamente!" << endl;
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(dataPartida.tm_min);
     }
 
@@ -412,23 +455,23 @@ void Aeroporto::criarVoo(Aviao &aviao) {
     cout << "Introduza as horas de Voo" << endl;
     input::inputInt(duracaoVoo.tm_hour);
     while (duracaoVoo.tm_hour > 60) {
-        cout <<"Input invalido, insira novamente!" << endl;
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(duracaoVoo.tm_hour);
     }
 
     cout << "Introduza os minutos de Voo" << endl;
     input::inputInt(dataPartida.tm_min);
     while (duracaoVoo.tm_min > 60) {
-        cout <<"Input invalido, insira novamente!" << endl;
+        cout << "Input invalido, insira novamente!" << endl;
         input::inputInt(dataPartida.tm_min);
     }
 
     cout << "Introduza o origem do Voo" << endl;
     cin.ignore(1000, '\n');
-    origem=input::inputStr();
+    origem = input::inputStr();
 
     cout << "Introduza o destino do Voo" << endl;
-    destino=input::inputStr();
+    destino = input::inputStr();
 
 
     cout << "Introduza o numero de carruagens por carrinho de transporte" << endl;
@@ -439,15 +482,45 @@ void Aeroporto::criarVoo(Aviao &aviao) {
 
     cout << "Introduza o numero de malas por pilha" << endl;
     input::inputInt(numMalas);
-    Voo voo(numVoo,0, dataPartida, duracaoVoo, origem, destino, numCarruagens, numPilhas, numMalas);
+    Voo voo(numVoo, 0, dataPartida, duracaoVoo, origem, destino, numCarruagens, numPilhas, numMalas);
     aviao.addVoo(voo);
 
 }
 
 void Aeroporto::comprarBilhetes() {
-    Aviao &aviao = procurarAviao();
+    string matricula;
+    cout << "Introduza matricula do aviao" << endl;
+    cin.ignore(1000, '\n');
+    matricula = input::inputStr();
+    if (matricula == "0") {
+        return;
+    }
+    while (!checkAviao(matricula)) {
+        cout << "Aviao nao existe" << endl;
+        matricula = input::inputStr();
+        if (matricula == "0") {
+            return;
+        }
+    }
+    Aviao &aviao = procurarAviao(matricula);
 
-    Voo &voo = aviao.procurarVoo();
+    int numVoo;
+    cout << "Introduza numero do voo" << endl;
+
+    input::inputInt(numVoo);
+    if (numVoo == 0) {
+        return;
+    }
+    while (!aviao.checkVoo(numVoo)) {
+        cout << "Voo nao existe" << endl;
+        input::inputInt(numVoo);
+        if (numVoo == 0) {
+            return;
+        }
+    }
+
+
+    Voo &voo = aviao.procurarVoo(numVoo);
 
     int numBilhetes;
     cout << "Introduza o numero de bilhetes a comprar" << endl;
@@ -462,7 +535,7 @@ void Aeroporto::comprarBilhetes() {
             int inputBagagemAuto;
             Menus::showMenuAskTemBagagem();
             input::inputInt(inputBagagem);
-            while (inputBagagem != 0 && inputBagagem != 1 ) {
+            while (inputBagagem != 0 && inputBagagem != 1) {
                 input::inputInt(inputBagagem);
                 Menus::showMenuAskTemBagagem();
             }
@@ -474,16 +547,16 @@ void Aeroporto::comprarBilhetes() {
                     Menus::showMenuAskBagagemAuto();
                     input::inputInt(inputBagagemAuto);
                 }
-                if(inputBagagemAuto == 1){
+                if (inputBagagemAuto == 1) {
                     bagagemAuto = true;
                 }
             }
 
             Bilhete b(p, bagagem);
             if (bagagemAuto) {
-                if(voo.getCarrinho().addBagagemCarruagem(b)){
+                if (voo.getCarrinho().addBagagemCarruagem(b)) {
                     b.setBagagemAuto();
-                }else{
+                } else {
                     cout << "Este voo tem a lotacao de malas automaticas cheia" << endl;
                 }
             }
@@ -499,7 +572,7 @@ Passageiro Aeroporto::criarPassageiro() {
     string nome;
     cout << "Introduza o nome do Passageiro" << endl;
     cin.ignore(1000, '\n');
-    nome=input::inputStr();
+    nome = input::inputStr();
 
     cout << "Introduza a idade do Passageiro" << endl;
     int idade;
@@ -515,32 +588,6 @@ Passageiro Aeroporto::criarPassageiro() {
     return p;
 }
 
-inputStruct Aeroporto::inputMatriculaCapacidade() {
-    int c;
-    string matricula;
-
-    cout << "Introduza a matricula do Aviao" << endl;
-
-
-    bool checkMatricula;
-    do{
-        checkMatricula = false;
-        input::inputMatricula(matricula);
-        for(Aviao& a: avioes) {
-            if (a.getMatricula() == matricula) {
-                cout << "Matricula ja existe, escolha outra" << endl;
-                checkMatricula = true;
-                break;
-            }
-        }
-    } while (checkMatricula);
-
-
-    cout << "Introduza a capacidade do Aviao" << endl;
-    input::inputInt(c);
-
-    return inputStruct(matricula, c);
-}
 
 list<Aviao> &Aeroporto::getAvioes() {
     return avioes;
@@ -549,7 +596,24 @@ list<Aviao> &Aeroporto::getAvioes() {
 void Aeroporto::verVoo(Aviao &a) {
     bool isVerVoo = true;
     int inputMenuVerVoo;
-    Voo &v = a.procurarVoo();
+
+    int numVoo;
+    cout << "Introduza numero do voo" << endl;
+
+    input::inputInt(numVoo);
+    if (numVoo == 0) {
+        return;
+    }
+    while (!a.checkVoo(numVoo)) {
+        cout << "Voo nao existe" << endl;
+        input::inputInt(numVoo);
+        if (numVoo == 0) {
+            return;
+        }
+    }
+
+    Voo &v = a.procurarVoo(numVoo);
+
     while (isVerVoo) {
         Menus::showMenuVoo(v);
         input::inputInt(inputMenuVerVoo);
@@ -574,7 +638,7 @@ void Aeroporto::verVoo(Aviao &a) {
 
 void Aeroporto::verBilhete(Voo &voo) {
     int id;
-    if(voo.getBilhetes().empty()){
+    if (voo.getBilhetes().empty()) {
         cout << "Nao existem bilhetes registados" << endl;
         return;
     }
@@ -598,25 +662,25 @@ void Aeroporto::verBilhete(Voo &voo) {
     }
 }
 
-void Aeroporto::removerBilhete(Voo& voo) {
+void Aeroporto::removerBilhete(Voo &voo) {
     int id;
     cout << "Introduza id do bilhete a remover" << endl;
-    if(voo.getBilhetes().empty()){
+    if (voo.getBilhetes().empty()) {
         cout << "Nao existem bilhetes" << endl;
         return;
     }
     input::inputInt(id);
-    if(id == 0){
+    if (id == 0) {
         return;
     }
-    while(!voo.removeBilhete(id)){
+    while (!voo.removeBilhete(id)) {
         cout << "Bilhete nao existe" << endl;
         input::inputInt(id);
-        if(id == 0){
+        if (id == 0) {
             return;
         }
     }
-    voo.setLotacao(voo.getLotacao()-1);
+    voo.setLotacao(voo.getLotacao() - 1);
     cout << "Bilhete eliminado com sucesso" << endl;
 
 }
@@ -637,7 +701,7 @@ void Aeroporto::mostrarServicoRealizar(Aviao &aviao) {
 void Aeroporto::mostrarServicosCompletos(Aviao &aviao) {
     int inputOrdenarServicosCompletos;
 
-    if(aviao.getservicosCompletos().empty()){
+    if (aviao.getservicosCompletos().empty()) {
         cout << "Ainda nao foi realizado nenhum servico" << endl;
         cout << endl;
         return;
@@ -645,7 +709,8 @@ void Aeroporto::mostrarServicosCompletos(Aviao &aviao) {
     Menus::showMenuAskOrdenacaoServicosCompletos();
 
     input::inputInt(inputOrdenarServicosCompletos);
-    while(inputOrdenarServicosCompletos != 1 && inputOrdenarServicosCompletos!=2 && inputOrdenarServicosCompletos!=3){
+    while (inputOrdenarServicosCompletos != 1 && inputOrdenarServicosCompletos != 2 &&
+           inputOrdenarServicosCompletos != 3) {
         input::inputInt(inputOrdenarServicosCompletos);
     }
 
@@ -667,7 +732,7 @@ void Aeroporto::criarServicoRealizar(Aviao &aviao) {
     Menus::showMenuAskTipoServico();
 
     input::inputInt(tipoServicoInt);
-    while (tipoServicoInt != 0 && tipoServicoInt != 1 && tipoServicoInt !=2) {
+    while (tipoServicoInt != 0 && tipoServicoInt != 1 && tipoServicoInt != 2) {
         cout << "Input invalido, insira novamente" << endl;
         input::inputInt(tipoServicoInt);
     }
@@ -684,27 +749,28 @@ void Aeroporto::criarServicoRealizar(Aviao &aviao) {
 
     string funcResponsavel;
     cout << "Introduza o nome do funcionario Responsavel" << endl;
+    cin.ignore(1000, '\n');
     funcResponsavel = input::inputStr();
 
 
     tm data;
     cout << "Introduza o mes em que o servico vai ser realizado: " << endl;
     input::inputInt(data.tm_mon);
-    while (data.tm_mon >= 12) {
+    while (data.tm_mon > 12) {
         cout << "Input invalido, mes tem que ser entre 1 e 12" << endl;
         input::inputInt(data.tm_mon);
     }
 
     cout << "Introduza o dia em que o servico vai ser realizado:" << endl;
     input::inputInt(data.tm_mday);
-    while (data.tm_mday >= 31) {
+    while (data.tm_mday > 31) {
         cout << "Input invalido, dia tem que ser entre 1 e 31" << endl;
         input::inputInt(data.tm_mday);
     }
 
     cout << "Introduza a hora em que o servico vai ser realizado:" << endl;
     input::inputInt(data.tm_hour);
-    while (data.tm_hour >= 23) {
+    while (data.tm_hour > 23) {
         cout << "Input invalido, hora tem que ser entre 0 e 23" << endl;
         input::inputInt(data.tm_hour);
     }
@@ -729,19 +795,35 @@ void Aeroporto::ordenarVoos(Aviao &aviao) {
     int inputOrdenarVoos;
     Menus::showMenuAskOrdenacaoVoos();
     input::inputInt(inputOrdenarVoos);
-    while(inputOrdenarVoos != 1 && inputOrdenarVoos!=2 && inputOrdenarVoos!=3 && inputOrdenarVoos!=4 && inputOrdenarVoos!=5){
+    while (inputOrdenarVoos != 1 && inputOrdenarVoos != 2 && inputOrdenarVoos != 3 && inputOrdenarVoos != 4 &&
+           inputOrdenarVoos != 5) {
         input::inputInt(inputOrdenarVoos);
     }
     aviao.ordenarVoos(inputOrdenarVoos);
 }
 
-Aeroporto::Aeroporto(gerenciarTransportes Transportes) {
-    this->Transportes = Transportes;
+Aeroporto::Aeroporto(string id) {
+    this->id = id;
 }
 
 gerenciarTransportes &Aeroporto::getTransportes() {
-    return  Transportes;
+    return Transportes;
 }
+
+string Aeroporto::getId() {
+    return id;
+}
+
+bool Aeroporto::checkAviao(string matricula) {
+    for (Aviao &a: avioes) {
+        if (a.getMatricula() == matricula) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 
 
 
