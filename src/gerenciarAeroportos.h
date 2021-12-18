@@ -12,11 +12,10 @@ class gerenciarAeroportos {
 public:
     gerenciarAeroportos();
     list<Aeroporto>& getAeroportos();
-    string checkInput();
     void verAeroporto();
     void showAeroportos();
-    void adicionarAeroporto();
-    void adicionarAeroportoFicheiro(Aeroporto aeroporto);
+    void criarAeroporto();
+    void adicionarAeroporto(Aeroporto aeroporto);
     void removerAeroporto();
     bool checkAeroporto(string id);
     void run();

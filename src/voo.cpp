@@ -15,6 +15,16 @@ Voo::Voo(int n, int lot, tm dPartida, tm durVoo, string orig, string dest,int nu
     carrinho = carro;
 }
 
+Voo::Voo() {
+    tm Partida = {.tm_hour = -1};
+    numVoo = -1;
+    lotacao = -1;
+    dataPartida = Partida;
+    origem = "";
+    destino = "";
+}
+
+
 
 int Voo::getNumVoo() const {
     return numVoo;
@@ -44,18 +54,14 @@ list <Bilhete> Voo::getBilhetes() const {
     return bilhetes;
 }
 
+carrinhoTransporte &Voo::getCarrinho() {
+    return carrinho;
+}
+
 void Voo::addBilhete(Bilhete b) {
     bilhetes.push_back(b);
 }
 
-Voo::Voo() {
-    tm Partida = {.tm_hour = -1};
-    numVoo = -1;
-    lotacao = -1;
-    dataPartida = Partida;
-    origem = "";
-    destino = "";
-}
 
 void Voo::setLotacao(int l) {
     this->lotacao = l;
@@ -75,9 +81,6 @@ bool Voo::removeBilhete(int id) {
     return false;
 }
 
-carrinhoTransporte &Voo::getCarrinho() {
-    return carrinho;
-}
 
 
 

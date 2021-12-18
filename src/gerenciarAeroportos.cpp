@@ -4,7 +4,15 @@
 
 #include "gerenciarAeroportos.h"
 
-void gerenciarAeroportos::adicionarAeroporto() {
+gerenciarAeroportos::gerenciarAeroportos() {
+
+}
+
+list<Aeroporto> &gerenciarAeroportos::getAeroportos() {
+    return aeroportos;
+}
+
+void gerenciarAeroportos::criarAeroporto() {
     string inputId;
     cout << "Introduza id do Aeroporto" << endl;
     cin.ignore(1000, '\n');
@@ -21,10 +29,10 @@ void gerenciarAeroportos::adicionarAeroporto() {
     }
 
     Aeroporto a(inputId);
-    aeroportos.push_back(a);
+    adicionarAeroporto(a);
 }
 
-void gerenciarAeroportos::adicionarAeroportoFicheiro(Aeroporto aeroporto){
+void gerenciarAeroportos::adicionarAeroporto(Aeroporto aeroporto){
     aeroportos.push_back(aeroporto);
 
 }
@@ -67,42 +75,6 @@ void gerenciarAeroportos::showAeroportos() {
 }
 
 
-
-void gerenciarAeroportos::run() {
-    bool isRunning = true;
-    int inputMenu;
-    while (isRunning) {
-        Menus::showMenu();
-        input::inputInt(inputMenu);
-        while (inputMenu != 0 && inputMenu != 1 && inputMenu != 2 && inputMenu != 3 && inputMenu != 4) {
-            input::inputInt(inputMenu);
-            Menus::showMenu();
-        }
-        switch (inputMenu) {
-            case 1:
-                showAeroportos();
-                break;
-            case 2:
-                adicionarAeroporto();
-                break;
-            case 3:
-                removerAeroporto();
-                break;
-            case 4:
-                verAeroporto();
-                break;
-            case 0:
-                isRunning = false;
-                break;
-        }
-
-    }
-}
-
-gerenciarAeroportos::gerenciarAeroportos() {
-
-}
-
 bool gerenciarAeroportos::checkAeroporto(string id) {
     for(Aeroporto& a: aeroportos){
         if(a.getId() == id){
@@ -112,9 +84,6 @@ bool gerenciarAeroportos::checkAeroporto(string id) {
     return false;
 }
 
-list<Aeroporto> &gerenciarAeroportos::getAeroportos() {
-    return aeroportos;
-}
 
 void gerenciarAeroportos::verAeroporto() {
     string inputId;
@@ -140,8 +109,33 @@ void gerenciarAeroportos::verAeroporto() {
 
 }
 
-string gerenciarAeroportos::checkInput() {
+void gerenciarAeroportos::run() {
+    bool isRunning = true;
+    int inputMenu;
+    while (isRunning) {
+        Menus::showMenu();
+        input::inputInt(inputMenu);
+        while (inputMenu != 0 && inputMenu != 1 && inputMenu != 2 && inputMenu != 3 && inputMenu != 4) {
+            input::inputInt(inputMenu);
+            Menus::showMenu();
+        }
+        switch (inputMenu) {
+            case 1:
+                showAeroportos();
+                break;
+            case 2:
+                criarAeroporto();
+                break;
+            case 3:
+                removerAeroporto();
+                break;
+            case 4:
+                verAeroporto();
+                break;
+            case 0:
+                isRunning = false;
+                break;
+        }
 
+    }
 }
-
-

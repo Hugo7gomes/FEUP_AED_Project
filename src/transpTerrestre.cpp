@@ -11,6 +11,10 @@ TranspTerrestre::TranspTerrestre(string tipoT, float d, tm h) : tipoTransporte(t
     idAux++;
 }
 
+TranspTerrestre::TranspTerrestre() {
+
+}
+
 string TranspTerrestre::getTipoTransporte() const {
     return tipoTransporte;
 }
@@ -45,9 +49,7 @@ bool TranspTerrestre::operator==(const TranspTerrestre& t) const {
     return this->id == t.id;
 }
 
-TranspTerrestre::TranspTerrestre() {
 
-}
 
 
 

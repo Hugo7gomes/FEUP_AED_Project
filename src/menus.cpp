@@ -33,6 +33,7 @@ namespace Menus {
         cout << "2) Adicionar Transportes" << endl;
         cout << "3) Remover Transportes" << endl;
         cout << "4) Procurar Transporte" << endl;
+        cout << "5) Mostar transporte mais proximo" << endl;
         cout << "0) Exit" << endl;
     }
 

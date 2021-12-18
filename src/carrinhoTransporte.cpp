@@ -13,12 +13,8 @@ carrinhoTransporte::carrinhoTransporte(int numCarruagens, int filaBagagem, int c
     }
 }
 
-bool carrinhoTransporte::addBagagemCarruagem(Bilhete &bilhete) {
-    for(Carruagem& carruagem : carruagens){
-        if(carruagem.addBagagem(bilhete))
-            return true;
-    }
-    return false;
+carrinhoTransporte::carrinhoTransporte() {
+
 }
 
 int carrinhoTransporte::getNumCarruagens() {
@@ -33,9 +29,15 @@ int carrinhoTransporte::getNumMalas() {
     return colunaBagagem;
 }
 
-carrinhoTransporte::carrinhoTransporte() {
-
+bool carrinhoTransporte::addBagagemCarruagem(Bilhete &bilhete) {
+    for(Carruagem& carruagem : carruagens){
+        if(carruagem.addBagagem(bilhete))
+            return true;
+    }
+    return false;
 }
+
+
 
 bool carrinhoTransporte::removeBagagemCarruagem(Bilhete &bilhete) {
     for(Carruagem& carruagem : carruagens){

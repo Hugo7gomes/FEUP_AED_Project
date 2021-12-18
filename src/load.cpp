@@ -15,7 +15,7 @@ void Load::aeroporto(gerenciarAeroportos &gerenciarAeroportos) {
     if(aeroportosStream.is_open()){
         while(getline(aeroportosStream, idAeroporto)){
             Aeroporto a(idAeroporto);
-            gerenciarAeroportos.adicionarAeroportoFicheiro(a);
+            gerenciarAeroportos.adicionarAeroporto(a);
         }
     }else{
         createFile(fileName);

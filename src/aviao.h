@@ -26,16 +26,19 @@ public:
     Servico& getServicoRealizar();
     queue<Servico>& getServicosRealizar();
     int getNumServicosRealizar();
+
     void addVoo(Voo v);
-    void addServicoRealizar(Servico &s);
-    void addServicoCompleto (Servico &s);
-    void realizarServico();
     void mostrarVoos();
     bool eliminarVoo(int numVoo);
     Voo& procurarVoo(int numVoo);
     void ordenarVoos(int inputOrdenarVoos);
-    void ordenarServicosCompletos(int inputOrdenarServicosCompletos);
     bool checkVoo(int numVoo);
+
+    void addServicoRealizar(Servico &s);
+    void addServicoCompleto (Servico &s);
+    void realizarServico();
+    void ordenarServicosCompletos(int inputOrdenarServicosCompletos);
+
 
 };
 

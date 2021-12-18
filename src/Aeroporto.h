@@ -15,48 +15,47 @@
 #include "transpTerrestre.h"
 
 
-struct inputStruct{
-    inputStruct(string m, int c){matricula = m; capacidade = c;};
-
-    string matricula;
-    int capacidade;
-};
-
-
 class Aeroporto {
     string id;
     list<Aviao> avioes;
     gerenciarTransportes Transportes;
+
 public:
+    Aeroporto(string id);
     gerenciarTransportes& getTransportes();
     string getId();
-    Aeroporto(string id);
-    void tratarTransportes();
-    void tratarAvioes();
-    void TratarVoos(Aviao &aviao);
-    void TratarServicos(Aviao &aviao);
-    void showAvioes();
-    void verVoo(Aviao& aviao);
-    void verBilhete(Voo& voo);
-    void removerBilhete(Voo& voo);
-    void mostrarServicoRealizar(Aviao& aviao);
-    void mostrarServicosCompletos(Aviao& aviao);
-    void criarServicoRealizar(Aviao& aviao);
-    void realizarServico(Aviao& aviao);
     list<Aviao>& getAvioes();
-    Aviao& procurarAviao(string matricula);
-    inputStruct inputMatriculaCapacidade();
+
+    void tratarAvioes();
+    void showAvioes();
     void addAviao(string matricula, int c);
-    void adicionarAviao();
+    void criarAviao();
     void removeAviao();
-    void comprarBilhetes();
     void alterarAviao();
+    bool checkAviao(string matricula);
+    Aviao& procurarAviao(string matricula);
+
+    void tratarTransportes();
+
+    void TratarVoos(Aviao &aviao);
+    void verVoo(Aviao& aviao);
     void criarVoo(Aviao& aviao);
     void deleteVoo(Aviao& aviao);
     void ordenarVoos(Aviao& aviao);
+
+    void TratarServicos(Aviao &aviao);
+    void showServicoRealizar(Aviao& aviao);
+    void showServicosCompletos(Aviao& aviao);
+    void criarServicoRealizar(Aviao& aviao);
+    void realizarServico(Aviao& aviao);
+
+    void verBilhete(Voo& voo);
+    void removerBilhete(Voo& voo);
+    void comprarBilhetes();
     Passageiro criarPassageiro();
+
     void run();
-    bool checkAviao(string matricula);
+
 
 };
 

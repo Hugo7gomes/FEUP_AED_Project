@@ -13,10 +13,10 @@ class carrinhoTransporte {
 public:
     carrinhoTransporte();
     carrinhoTransporte(int numCarruagens, int filaBagagem, int colunaBagagem);
-    bool addBagagemCarruagem(Bilhete &bilhete);
     int getNumCarruagens();
     int getNumPilhas();
     int getNumMalas();
+    bool addBagagemCarruagem(Bilhete &bilhete);
     bool removeBagagemCarruagem(Bilhete &bilhete);
 };
 

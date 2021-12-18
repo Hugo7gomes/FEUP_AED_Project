@@ -4,7 +4,12 @@
 
 #include "gerenciarTransportes.h"
 
-void gerenciarTransportes::mostrarTransportes() {
+BST<TranspTerrestre> &gerenciarTransportes::getTransportesBST() {
+    return transportes;
+}
+
+
+void gerenciarTransportes::showTransportes() {
     if(transportes.isEmpty()){
         cout << "Nenhum Transporte guardado" << endl;
         return;
@@ -111,6 +116,3 @@ void gerenciarTransportes::inputTransporte(TranspTerrestre& t) {
     t = aux;
 }
 
-BST<TranspTerrestre> &gerenciarTransportes::getTransportesBST() {
-    return transportes;
-}

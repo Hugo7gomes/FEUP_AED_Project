@@ -17,7 +17,7 @@ class gerenciarTransportes {
     tm NotFound{0,0,0,1,1,80};
 public:
     gerenciarTransportes(): transportes(TranspTerrestre("",0.0,NotFound)){};
-    void mostrarTransportes();
+    void showTransportes();
     bool adicionarTransporte(const TranspTerrestre& t);
     bool removerTransporte(const TranspTerrestre& t);
     bool procurarTransporte();
