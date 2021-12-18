@@ -38,7 +38,6 @@ bool carrinhoTransporte::addBagagemCarruagem(Bilhete &bilhete) {
 }
 
 
-
 bool carrinhoTransporte::removeBagagemCarruagem(Bilhete &bilhete) {
     for(Carruagem& carruagem : carruagens){
         if(carruagem.removeBagagem(bilhete)){

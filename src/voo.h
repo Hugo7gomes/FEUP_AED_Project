@@ -15,18 +15,21 @@ class Voo {
     carrinhoTransporte carrinho;
 
 public:
+    /**
+     * Construtor default da classe Voo
+     */
     Voo();
     /**
-     *
-     * @param n
-     * @param lot
-     * @param dPartida
-     * @param durVoo
-     * @param orig
-     * @param dest
-     * @param numCarruagens
-     * @param numPilhas
-     * @param numMalas
+     * Construtor da classe voo
+     * @param n numero de Voo
+     * @param lot lotacao
+     * @param dPartida data de Partida
+     * @param durVoo duracao de Voo
+     * @param orig origem
+     * @param dest destino
+     * @param numCarruagens numero de carruagens do carrinho
+     * @param numPilhas numero de pilhas de malas por carruagem
+     * @param numMalas numero de malas por piha
      */
     Voo(int n,int lot, struct tm dPartida, struct tm durVoo, string orig, string dest, int numCarruagens,int numPilhas,int numMalas);
     /**
@@ -85,7 +88,6 @@ public:
      * @param l lotacao
      */
     void setLotacao(int l);
-
 };
 
 

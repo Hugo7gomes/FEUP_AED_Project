@@ -9,15 +9,52 @@
 
 class Update {
 
-public:
-    Update();
+private:
+
+    /**
+     *
+     * @param gerenciarAeroportos
+     */
     void aeroporto(gerenciarAeroportos &gerenciarAeroportos);
+    /**
+     *
+     * @param aeroporto
+     */
     void avioes(Aeroporto & aeroporto);
+    /**
+     *
+     * @param aeroporto
+     */
     void voos(Aeroporto& aeroporto);
+    /**
+     *
+     * @param aeroporto
+     */
     void bilhetes(Aeroporto& aeroporto);
+    /**
+     *
+     * @param aeroporto
+     */
     void servicosCompletos(Aeroporto& aeroporto);
+    /**
+     *
+     * @param aeroporto
+     */
     void servicosRealizar(Aeroporto& aeroporto);
+    /**
+     *
+     * @param aeroporto
+     */
     void transportesTerrestres(Aeroporto& aeroporto);
+public:
+    /**
+    *
+    */
+    Update();
+    /**
+     * este metodo é responsavel por chamar todos os metodos encarregues de dar update de informacao para os ficheiros
+     * @param gerenciarAeroportos
+     */
     void run(gerenciarAeroportos &gerenciarAeroportos);
 };
 

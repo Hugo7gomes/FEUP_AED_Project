@@ -12,11 +12,14 @@ class Bilhete {
     bool temBagagem;
     bool bagagemAuto;
 public:
+    /**
+     * Construtor default da classe Bilhete
+     */
     Bilhete();
     /**
-     *
-     * @param p
-     * @param b
+     * Construtor da classe Bilhete
+     * @param p passageiro
+     * @param b se tem bagagem
      */
     Bilhete(Passageiro p, bool b);
     /**

@@ -12,6 +12,7 @@ namespace Menus {
         cout << "4) Ver aeroporto" << endl;
         cout << "0) Exit" << endl;
     }
+
     void showMenuAeroporto(){
         cout << "1) Avioes" << endl;
         cout << "2) Transportes Terrestres" << endl;
@@ -123,6 +124,4 @@ namespace Menus {
         cout << "2) Data do servico" << endl;
         cout << "3) Funcionario responsavel" << endl;
     }
-
-
 }
