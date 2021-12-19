@@ -30,7 +30,7 @@ public:
      * este metodo fornece o nome do funcionario responsavel pelo servico
      * @return nome do funcionario responsavel
      */
-    string getFuncResponsavel();
+    string getFuncResponsavel() const;
 
 
 };

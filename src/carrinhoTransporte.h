@@ -23,28 +23,28 @@ public:
      */
     carrinhoTransporte(int numCarruagens, int filaBagagem, int colunaBagagem);
     /**
-     * este metodo fornece o número de carruagens do carrinho
+     * Este método fornece o número de carruagens do carrinho
      * @return número de carruagens
      */
     int getNumCarruagens();
     /**
-     * este metodo fornece o número de pilhas de cada carruagens
+     * Este método fornece o número de pilhas de cada carruagens
      * @return número de pilhas
      */
     int getNumPilhas();
     /**
-     * este metodo fornece o número de malas de cada pilha
+     * Este método fornece o número de malas de cada pilha
      * @return número de malas
      */
     int getNumMalas();
     /**
-     * este metodo indica se uma bagagem é adicionada ao carrinho
+     * Este método indica se uma bagagem é adicionada ao carrinho
      * @param bilhete
      * @return true se a bagagem tiver sido adicionada com sucesso
      */
     bool addBagagemCarruagem(Bilhete &bilhete);
     /**
-     * este metodo indica se uma bagagem é removida do carrinho
+     * Este método indica se uma bagagem é removida do carrinho
      * @param bilhete
      * @return true se a bagagem tiver sido removida com sucesso
      */

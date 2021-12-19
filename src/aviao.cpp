@@ -4,7 +4,7 @@
 
 #include "aviao.h"
 
-Aviao::Aviao(string m, int c) : matricula(m), capacidade(c) {
+Aviao::Aviao(string matricula, int capacidade) : matricula(matricula), capacidade(capacidade) {
 }
 
 int Aviao::getCapacidade() const {
@@ -19,7 +19,7 @@ list <Voo> &Aviao::getPlanoVoo() {
     return planoVoo;
 }
 
-list <Servico> &Aviao::getservicosCompletos() {
+list <Servico> &Aviao::getServicosCompletos() {
     return servicosCompletos;
 }
 
@@ -201,4 +201,8 @@ void Aviao::ordenarServicosCompletos(int inputOrdenarServicosCompletos) {
             servicosCompletos.sort(compareByfuncResponsavel());
             break;
     }
+}
+
+Aviao::Aviao():capacidade(0) {
+
 }

@@ -22,7 +22,7 @@ public:
     list<Aeroporto>& getAeroportos();
 
     /**
-     * Este metodo pede ao utilizador o id do aeroporto e acede ao mesmo
+     * Este método pede ao utilizador o id do aeroporto e acede ao mesmo
      */
     void verAeroporto();
 
@@ -55,7 +55,7 @@ public:
     bool checkAeroporto(string id);
 
     /**
-     *Este metodo apresenta as opcoes do menu principal no que toca a gerenciar aeroportos
+     *Este método apresenta as opcoes do menu principal no que toca a gerenciar aeroportos
      */
     void run();
 };

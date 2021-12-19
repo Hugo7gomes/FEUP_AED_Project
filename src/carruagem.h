@@ -17,13 +17,13 @@ public:
      */
     Carruagem(int filaBagagem, int colunaBagagem);
     /**
-     * Este metodo indica se uma bagagem é adicionada a pilha
+     * Este método indica se uma bagagem é adicionada a pilha
      * @param bilhete
      * @return true se a bagagem tiver sido adicionada com sucesso
      */
     bool addBagagem(Bilhete& bilhete);
     /**
-     * Este metodo indica se uma bagagem é removida da pilha
+     * Este método indica se uma bagagem é removida da pilha
      * @param bilhete
      * @return true se a bagagem tiver sido removida com sucesso
      */

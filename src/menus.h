@@ -9,7 +9,7 @@
 
 namespace Menus {
     /**
-     * Este método mostra na consola o menu inicial e as possíveis altereções aos aeoroportos
+     * Este método mostra na consola o menu inicial e as possíveis alterações aos aeoroportos
      */
     void showMenu();
 

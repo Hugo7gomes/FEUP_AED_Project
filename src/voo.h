@@ -46,7 +46,7 @@ public:
      * este metodo fornece a data de Partida do voo
      * @return data de Partida
      */
-    tm getDataPartida();
+    tm getDataPartida() const;
     /**
      * este metodo fornece a duracao do voo
      * @return duracao voo

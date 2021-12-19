@@ -4,10 +4,9 @@
 
 using  namespace  std;
 
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
 #include <string>
-//#include <vector>
+#include <vector>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -24,4 +23,4 @@ using  namespace  std;
 
 
 
-#endif //PROJECT_DEFS_H
+#endif //DEFS_H

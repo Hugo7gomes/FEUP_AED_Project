@@ -105,10 +105,10 @@ void Aeroporto::alterarAviao() {
         }
         switch (inputMenuAlterarAviao) {
             case 1:
-                TratarVoos(aviao);
+                tratarVoos(aviao);
                 break;
             case 2:
-                TratarServicos(aviao);
+                tratarServicos(aviao);
                 break;
             case 0:
                 isAlterarAviao = false;
@@ -130,8 +130,8 @@ bool Aeroporto::checkAviao(string matricula) {
 }
 
 
-void Aeroporto::addAviao(string matricula, int c) {
-    Aviao aviao(matricula, c);
+void Aeroporto::addAviao(string matricula, int capacidade) {
+    Aviao aviao(matricula, capacidade);
     avioes.push_back(aviao);
 }
 
@@ -438,7 +438,7 @@ void Aeroporto::ordenarVoos(Aviao &aviao) {
 }
 
 
-void Aeroporto::TratarVoos(Aviao &aviao) {
+void Aeroporto::tratarVoos(Aviao &aviao) {
     bool isAlterarVoo = true;
     int inputMenuAlterarVoo;
     while (isAlterarVoo) {
@@ -450,7 +450,6 @@ void Aeroporto::TratarVoos(Aviao &aviao) {
             Menus::showMenuAlterarAviaoVoos();
             input::inputInt(inputMenuAlterarVoo);
         }
-
         switch (inputMenuAlterarVoo) {
             case 1:
                 ordenarVoos(aviao);
@@ -464,11 +463,9 @@ void Aeroporto::TratarVoos(Aviao &aviao) {
                 }
                 verVoo(aviao);
                 break;
-
             case 3:
                 criarVoo(aviao);
                 break;
-
             case 4:
                 deleteVoo(aviao);
                 break;
@@ -497,7 +494,7 @@ void Aeroporto::showServicoRealizar(Aviao &aviao) {
 void Aeroporto::showServicosCompletos(Aviao &aviao) {
     int inputOrdenarServicosCompletos;
 
-    if (aviao.getservicosCompletos().empty()) {
+    if (aviao.getServicosCompletos().empty()) {
         cout << "Ainda nao foi realizado nenhum servico" << endl;
         cout << endl;
         return;
@@ -512,7 +509,7 @@ void Aeroporto::showServicosCompletos(Aviao &aviao) {
 
     aviao.ordenarServicosCompletos(inputOrdenarServicosCompletos);
 
-    for (Servico &s: aviao.getservicosCompletos()) {
+    for (Servico &s: aviao.getServicosCompletos()) {
         cout << s.getTipoServico() << endl;
         cout << s.getFuncResponsavel() << endl;
         cout << s.getData().tm_mon << "/" << s.getData().tm_mday << " " << s.getData().tm_hour << ":00" << endl;
@@ -590,7 +587,7 @@ void Aeroporto::realizarServico(Aviao &aviao) {
 }
 
 
-void Aeroporto::TratarServicos(Aviao &aviao) {
+void Aeroporto::tratarServicos(Aviao &aviao) {
     bool isAlterarServico = true;
     int inputMenuAlterarServico;
     while (isAlterarServico) {
@@ -679,7 +676,7 @@ void Aeroporto::verBilhete(Voo &voo) {
                 cout << "Nome: " << b.getPassageiro().getNome() << endl;
                 cout << "Idade: " << b.getPassageiro().getIdade() << endl;
                 cout << "CC: " << b.getPassageiro().getCC() << endl;
-                cout << "Tem bagagem: " << b.gettemBagagem() << endl;
+                cout << "Tem bagagem: " << b.getTemBagagem() << endl;
                 cout << "Quer bagagem automatica: " << b.getBagagemAuto() << endl;
                 cout << "///////////////////////////////" << endl;
                 return;

@@ -34,7 +34,7 @@ int Voo::getLotacao() const {
     return lotacao;
 }
 
-tm Voo::getDataPartida() {
+tm Voo::getDataPartida() const{
     return dataPartida;
 }
 

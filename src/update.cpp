@@ -72,7 +72,7 @@ void Update::bilhetes(Aeroporto &aeroporto) {
                 bilheteStream << b.getPassageiro().getNome() << endl;
                 bilheteStream << b.getPassageiro().getIdade() << endl;
                 bilheteStream << b.getPassageiro().getCC() << endl;
-                bilheteStream << b.gettemBagagem() << endl;
+                bilheteStream << b.getTemBagagem() << endl;
                 bilheteStream << b.getBagagemAuto() << endl;
             }
             bilheteStream.close();
@@ -87,7 +87,7 @@ void Update::servicosCompletos(Aeroporto &aeroporto) {
 
         ofstream servicosCompletosStream;
         servicosCompletosStream.open(servicosCompletosFile.str(), ofstream::trunc);
-        for (Servico &s: a.getservicosCompletos()) {
+        for (Servico &s: a.getServicosCompletos()) {
             servicosCompletosStream << s.getTipoServico() << endl;
             servicosCompletosStream << s.getData().tm_mon << endl;
             servicosCompletosStream << s.getData().tm_mday << endl;

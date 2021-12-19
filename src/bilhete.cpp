@@ -26,7 +26,7 @@ void Bilhete::setBagagemAuto() {
     bagagemAuto = true;
 }
 
-bool Bilhete::gettemBagagem() const {
+bool Bilhete::getTemBagagem() const {
     return temBagagem;
 }
 int Bilhete::getID() {
