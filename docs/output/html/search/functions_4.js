@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['setbagagemauto_0',['setBagagemAuto',['../class_bilhete.html#a372badf7b16d4e52a557cd4b517262f2',1,'Bilhete']]],
-  ['setlotacao_1',['setLotacao',['../class_voo.html#ac7ee8f9bf05376e9991fffa5b0b008b5',1,'Voo']]]
+  ['eliminarvoo_0',['eliminarVoo',['../class_aviao.html#a79bdc2ac1c8b264efa5b2be7e3d489d8',1,'Aviao']]],
+  ['end_1',['end',['../class_b_s_t.html#ad82db657678438b8f76f328e1b5016f3',1,'BST']]]
 ];

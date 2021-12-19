@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Aed: src/bilhete.h Source File</title>
+<title>Aed_Project: C:/Users/jpedr/AED/Project/src/bilhete.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Aed
+   <div id="projectname">Aed_Project
    </div>
   </td>
  </tr>
@@ -69,12 +69,12 @@ $(function() {
   <div class="headertitle"><div class="title">bilhete.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BILHETE_H</span></div>
+<a href="bilhete_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BILHETE_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BILHETE_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;passageiro.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;defs.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="passageiro_8h.html">passageiro.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="defs_8h.html">defs.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_bilhete.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_bilhete.html">Bilhete</a> {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keyword">static</span> <span class="keywordtype">int</span> idAux;</div>
@@ -83,24 +83,27 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> temBagagem;</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">bool</span> bagagemAuto;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="class_bilhete.html">Bilhete</a>();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_bilhete.html">Bilhete</a>(<a class="code hl_class" href="class_passageiro.html">Passageiro</a> p, <span class="keywordtype">bool</span> b);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="class_passageiro.html">Passageiro</a> <a class="code hl_function" href="class_bilhete.html#ae2c1b4d96f5ed23c3810314e5afe6ed4">getPassageiro</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bilhete.html#ad77f24c0f780982820aa1e7787ff9a68">gettemBagagem</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bilhete.html#a5f4d4948b5e1a1d0aea29ce6fc4e34c5">getBagagemAuto</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bilhete.html#a372badf7b16d4e52a557cd4b517262f2">setBagagemAuto</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bilhete.html#ab7b349e0c65342b61c44020692ed7c13">getID</a>();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#endif </span><span class="comment">//PROJECT_BILHETE_H</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="class_bilhete.html#a3c69ddb7c2df72c5393fd4d155827086">Bilhete</a>();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_bilhete.html#a3c69ddb7c2df72c5393fd4d155827086">Bilhete</a>(<a class="code hl_class" href="class_passageiro.html">Passageiro</a> p, <span class="keywordtype">bool</span> b);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_class" href="class_passageiro.html">Passageiro</a> <a class="code hl_function" href="class_bilhete.html#ae2c1b4d96f5ed23c3810314e5afe6ed4">getPassageiro</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bilhete.html#a6e389069d2411bf5b8bf459ec235696b">getTemBagagem</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_bilhete.html#a5f4d4948b5e1a1d0aea29ce6fc4e34c5">getBagagemAuto</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_bilhete.html#a372badf7b16d4e52a557cd4b517262f2">setBagagemAuto</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_bilhete.html#ab7b349e0c65342b61c44020692ed7c13">getID</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">//PROJECT_BILHETE_H</span></div>
 <div class="ttc" id="aclass_bilhete_html"><div class="ttname"><a href="class_bilhete.html">Bilhete</a></div><div class="ttdef"><b>Definition:</b> bilhete.h:8</div></div>
 <div class="ttc" id="aclass_bilhete_html_a372badf7b16d4e52a557cd4b517262f2"><div class="ttname"><a href="class_bilhete.html#a372badf7b16d4e52a557cd4b517262f2">Bilhete::setBagagemAuto</a></div><div class="ttdeci">void setBagagemAuto()</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:25</div></div>
+<div class="ttc" id="aclass_bilhete_html_a3c69ddb7c2df72c5393fd4d155827086"><div class="ttname"><a href="class_bilhete.html#a3c69ddb7c2df72c5393fd4d155827086">Bilhete::Bilhete</a></div><div class="ttdeci">Bilhete()</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:35</div></div>
 <div class="ttc" id="aclass_bilhete_html_a5f4d4948b5e1a1d0aea29ce6fc4e34c5"><div class="ttname"><a href="class_bilhete.html#a5f4d4948b5e1a1d0aea29ce6fc4e34c5">Bilhete::getBagagemAuto</a></div><div class="ttdeci">bool getBagagemAuto() const</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:21</div></div>
+<div class="ttc" id="aclass_bilhete_html_a6e389069d2411bf5b8bf459ec235696b"><div class="ttname"><a href="class_bilhete.html#a6e389069d2411bf5b8bf459ec235696b">Bilhete::getTemBagagem</a></div><div class="ttdeci">bool getTemBagagem() const</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:29</div></div>
 <div class="ttc" id="aclass_bilhete_html_ab7b349e0c65342b61c44020692ed7c13"><div class="ttname"><a href="class_bilhete.html#ab7b349e0c65342b61c44020692ed7c13">Bilhete::getID</a></div><div class="ttdeci">int getID()</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:32</div></div>
-<div class="ttc" id="aclass_bilhete_html_ad77f24c0f780982820aa1e7787ff9a68"><div class="ttname"><a href="class_bilhete.html#ad77f24c0f780982820aa1e7787ff9a68">Bilhete::gettemBagagem</a></div><div class="ttdeci">bool gettemBagagem() const</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:29</div></div>
 <div class="ttc" id="aclass_bilhete_html_ae2c1b4d96f5ed23c3810314e5afe6ed4"><div class="ttname"><a href="class_bilhete.html#ae2c1b4d96f5ed23c3810314e5afe6ed4">Bilhete::getPassageiro</a></div><div class="ttdeci">Passageiro getPassageiro() const</div><div class="ttdef"><b>Definition:</b> bilhete.cpp:15</div></div>
 <div class="ttc" id="aclass_passageiro_html"><div class="ttname"><a href="class_passageiro.html">Passageiro</a></div><div class="ttdef"><b>Definition:</b> passageiro.h:6</div></div>
+<div class="ttc" id="adefs_8h_html"><div class="ttname"><a href="defs_8h.html">defs.h</a></div></div>
+<div class="ttc" id="apassageiro_8h_html"><div class="ttname"><a href="passageiro_8h.html">passageiro.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

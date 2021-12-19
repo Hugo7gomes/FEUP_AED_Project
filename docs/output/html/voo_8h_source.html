@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Aed: src/voo.h Source File</title>
+<title>Aed_Project: C:/Users/jpedr/AED/Project/src/voo.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Aed
+   <div id="projectname">Aed_Project
    </div>
   </td>
  </tr>
@@ -69,12 +69,12 @@ $(function() {
   <div class="headertitle"><div class="title">voo.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VOO_H</span></div>
+<a href="voo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef VOO_H</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define VOO_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;defs.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;bilhete.h&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;carrinhoTransporte.h&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="defs_8h.html">defs.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="bilhete_8h.html">bilhete.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="carrinho_transporte_8h.html">carrinhoTransporte.h</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_voo.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_voo.html">Voo</a> {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">int</span> numVoo;</div>
@@ -86,38 +86,41 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_class" href="classcarrinho_transporte.html">carrinhoTransporte</a> carrinho;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_class" href="class_voo.html">Voo</a>();</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="class_voo.html">Voo</a>(<span class="keywordtype">int</span> n,<span class="keywordtype">int</span> lot, <span class="keyword">struct</span> tm dPartida, <span class="keyword">struct</span> tm durVoo, <span class="keywordtype">string</span> orig, <span class="keywordtype">string</span> dest, <span class="keywordtype">int</span> numCarruagens,<span class="keywordtype">int</span> numPilhas,<span class="keywordtype">int</span> numMalas);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_voo.html#aa8c82cf4e90d53cd75f86a09b342c6d3">getNumVoo</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_voo.html#ae7eaf66bb3fcbae85f450fa4b53be9e8">getLotacao</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    tm <a class="code hl_function" href="class_voo.html#ac7743ffd961b7287e6a2fbea4c5eea0f">getDataPartida</a>();</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    tm <a class="code hl_function" href="class_voo.html#aa38288cb6bb2e69a0f542edbbf6b3b6b">getDuracaoVoo</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_voo.html#a304bbbcdef6d0fe08af70a409b163858">getOrigem</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_voo.html#aac683db5e59a5027429626bbcfe442d1">getDestino</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    list&lt;Bilhete&gt; <a class="code hl_function" href="class_voo.html#a83ed2c59546d58785050ff6a1ae9ffc3">getBilhetes</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <a class="code hl_class" href="classcarrinho_transporte.html">carrinhoTransporte</a>&amp; <a class="code hl_function" href="class_voo.html#a02f3aa5475cf5bf47e3c00eb84cfb7ae">getCarrinho</a>();</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_voo.html#af23e95aba742c2c556adc35b00101471">addBilhete</a>(<a class="code hl_class" href="class_bilhete.html">Bilhete</a> b);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_voo.html#acbe37084106dabf915f80b876e6def76">removeBilhete</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_voo.html#ac7ee8f9bf05376e9991fffa5b0b008b5">setLotacao</a>(<span class="keywordtype">int</span> l);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">//VOO_H</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="class_voo.html#a609426279fa49ee0dd2758a20e1346cb">Voo</a>();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="class_voo.html#a609426279fa49ee0dd2758a20e1346cb">Voo</a>(<span class="keywordtype">int</span> n,<span class="keywordtype">int</span> lot, <span class="keyword">struct</span> tm dPartida, <span class="keyword">struct</span> tm durVoo, <span class="keywordtype">string</span> orig, <span class="keywordtype">string</span> dest, <span class="keywordtype">int</span> numCarruagens,<span class="keywordtype">int</span> numPilhas,<span class="keywordtype">int</span> numMalas);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_voo.html#aa8c82cf4e90d53cd75f86a09b342c6d3">getNumVoo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_voo.html#ae7eaf66bb3fcbae85f450fa4b53be9e8">getLotacao</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    tm <a class="code hl_function" href="class_voo.html#ad69a5df0a78560af5c53d3482e07358a">getDataPartida</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    tm <a class="code hl_function" href="class_voo.html#aa38288cb6bb2e69a0f542edbbf6b3b6b">getDuracaoVoo</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_voo.html#a304bbbcdef6d0fe08af70a409b163858">getOrigem</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_voo.html#aac683db5e59a5027429626bbcfe442d1">getDestino</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    list&lt;Bilhete&gt; <a class="code hl_function" href="class_voo.html#a83ed2c59546d58785050ff6a1ae9ffc3">getBilhetes</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_class" href="classcarrinho_transporte.html">carrinhoTransporte</a>&amp; <a class="code hl_function" href="class_voo.html#a02f3aa5475cf5bf47e3c00eb84cfb7ae">getCarrinho</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_voo.html#af23e95aba742c2c556adc35b00101471">addBilhete</a>(<a class="code hl_class" href="class_bilhete.html">Bilhete</a> b);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_voo.html#acbe37084106dabf915f80b876e6def76">removeBilhete</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_voo.html#ac7ee8f9bf05376e9991fffa5b0b008b5">setLotacao</a>(<span class="keywordtype">int</span> l);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#endif </span><span class="comment">//VOO_H</span></div>
+<div class="ttc" id="abilhete_8h_html"><div class="ttname"><a href="bilhete_8h.html">bilhete.h</a></div></div>
+<div class="ttc" id="acarrinho_transporte_8h_html"><div class="ttname"><a href="carrinho_transporte_8h.html">carrinhoTransporte.h</a></div></div>
 <div class="ttc" id="aclass_bilhete_html"><div class="ttname"><a href="class_bilhete.html">Bilhete</a></div><div class="ttdef"><b>Definition:</b> bilhete.h:8</div></div>
 <div class="ttc" id="aclass_voo_html"><div class="ttname"><a href="class_voo.html">Voo</a></div><div class="ttdef"><b>Definition:</b> voo.h:8</div></div>
 <div class="ttc" id="aclass_voo_html_a02f3aa5475cf5bf47e3c00eb84cfb7ae"><div class="ttname"><a href="class_voo.html#a02f3aa5475cf5bf47e3c00eb84cfb7ae">Voo::getCarrinho</a></div><div class="ttdeci">carrinhoTransporte &amp; getCarrinho()</div><div class="ttdef"><b>Definition:</b> voo.cpp:57</div></div>
 <div class="ttc" id="aclass_voo_html_a304bbbcdef6d0fe08af70a409b163858"><div class="ttname"><a href="class_voo.html#a304bbbcdef6d0fe08af70a409b163858">Voo::getOrigem</a></div><div class="ttdeci">string getOrigem() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:45</div></div>
+<div class="ttc" id="aclass_voo_html_a609426279fa49ee0dd2758a20e1346cb"><div class="ttname"><a href="class_voo.html#a609426279fa49ee0dd2758a20e1346cb">Voo::Voo</a></div><div class="ttdeci">Voo()</div><div class="ttdef"><b>Definition:</b> voo.cpp:18</div></div>
 <div class="ttc" id="aclass_voo_html_a83ed2c59546d58785050ff6a1ae9ffc3"><div class="ttname"><a href="class_voo.html#a83ed2c59546d58785050ff6a1ae9ffc3">Voo::getBilhetes</a></div><div class="ttdeci">list&lt; Bilhete &gt; getBilhetes() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:53</div></div>
 <div class="ttc" id="aclass_voo_html_aa38288cb6bb2e69a0f542edbbf6b3b6b"><div class="ttname"><a href="class_voo.html#aa38288cb6bb2e69a0f542edbbf6b3b6b">Voo::getDuracaoVoo</a></div><div class="ttdeci">tm getDuracaoVoo() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:41</div></div>
 <div class="ttc" id="aclass_voo_html_aa8c82cf4e90d53cd75f86a09b342c6d3"><div class="ttname"><a href="class_voo.html#aa8c82cf4e90d53cd75f86a09b342c6d3">Voo::getNumVoo</a></div><div class="ttdeci">int getNumVoo() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:29</div></div>
 <div class="ttc" id="aclass_voo_html_aac683db5e59a5027429626bbcfe442d1"><div class="ttname"><a href="class_voo.html#aac683db5e59a5027429626bbcfe442d1">Voo::getDestino</a></div><div class="ttdeci">string getDestino() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:49</div></div>
-<div class="ttc" id="aclass_voo_html_ac7743ffd961b7287e6a2fbea4c5eea0f"><div class="ttname"><a href="class_voo.html#ac7743ffd961b7287e6a2fbea4c5eea0f">Voo::getDataPartida</a></div><div class="ttdeci">tm getDataPartida()</div><div class="ttdef"><b>Definition:</b> voo.cpp:37</div></div>
 <div class="ttc" id="aclass_voo_html_ac7ee8f9bf05376e9991fffa5b0b008b5"><div class="ttname"><a href="class_voo.html#ac7ee8f9bf05376e9991fffa5b0b008b5">Voo::setLotacao</a></div><div class="ttdeci">void setLotacao(int l)</div><div class="ttdef"><b>Definition:</b> voo.cpp:66</div></div>
 <div class="ttc" id="aclass_voo_html_acbe37084106dabf915f80b876e6def76"><div class="ttname"><a href="class_voo.html#acbe37084106dabf915f80b876e6def76">Voo::removeBilhete</a></div><div class="ttdeci">bool removeBilhete(int id)</div><div class="ttdef"><b>Definition:</b> voo.cpp:70</div></div>
+<div class="ttc" id="aclass_voo_html_ad69a5df0a78560af5c53d3482e07358a"><div class="ttname"><a href="class_voo.html#ad69a5df0a78560af5c53d3482e07358a">Voo::getDataPartida</a></div><div class="ttdeci">tm getDataPartida() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:37</div></div>
 <div class="ttc" id="aclass_voo_html_ae7eaf66bb3fcbae85f450fa4b53be9e8"><div class="ttname"><a href="class_voo.html#ae7eaf66bb3fcbae85f450fa4b53be9e8">Voo::getLotacao</a></div><div class="ttdeci">int getLotacao() const</div><div class="ttdef"><b>Definition:</b> voo.cpp:33</div></div>
 <div class="ttc" id="aclass_voo_html_af23e95aba742c2c556adc35b00101471"><div class="ttname"><a href="class_voo.html#af23e95aba742c2c556adc35b00101471">Voo::addBilhete</a></div><div class="ttdeci">void addBilhete(Bilhete b)</div><div class="ttdef"><b>Definition:</b> voo.cpp:61</div></div>
 <div class="ttc" id="aclasscarrinho_transporte_html"><div class="ttname"><a href="classcarrinho_transporte.html">carrinhoTransporte</a></div><div class="ttdef"><b>Definition:</b> carrinhoTransporte.h:10</div></div>
+<div class="ttc" id="adefs_8h_html"><div class="ttname"><a href="defs_8h.html">defs.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

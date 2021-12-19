@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Project Aed: src/gerenciarTransportes.h Source File</title>
+<title>Aed_Project: C:/Users/jpedr/AED/Project/src/gerenciarTransportes.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Project Aed
+   <div id="projectname">Aed_Project
    </div>
   </td>
  </tr>
@@ -69,17 +69,17 @@ $(function() {
   <div class="headertitle"><div class="title">gerenciarTransportes.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<a href="gerenciar_transportes_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created by jpedr on 17/12/2021.</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef PROJECT_GERENCIARTRANSPORTES_H</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define PROJECT_GERENCIARTRANSPORTES_H</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;defs.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;transpTerrestre.h&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;input.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;bst.h&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="defs_8h.html">defs.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="transp_terrestre_8h.html">transpTerrestre.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="input_8h.html">input.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="bst_8h.html">bst.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
@@ -87,23 +87,36 @@ $(function() {
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="class_b_s_t.html">BST&lt;TranspTerrestre&gt;</a> transportes;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    tm NotFound{0,0,0,1,1,80};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classgerenciar_transportes.html">gerenciarTransportes</a>(): transportes(<a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>(<span class="stringliteral">&quot;&quot;</span>,0.0,NotFound)){};</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> showTransportes();</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">bool</span> adicionarTransporte(<span class="keyword">const</span> <a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>&amp; t);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">bool</span> removerTransporte(<span class="keyword">const</span> <a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>&amp; t);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">bool</span> procurarTransporte();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> inputTransporte(<a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>&amp; t);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> showTransporteMaisProximo();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> showTransporte(<a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a> t);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="class_b_s_t.html">BST&lt;TranspTerrestre&gt;</a>&amp; getTransportesBST();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif </span><span class="comment">//PROJECT_GERENCIARTRANSPORTES_H</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classgerenciar_transportes.html#a66811581d0e54de4b4e0c6aaec38fc02">   22</a></span>    <a class="code hl_function" href="classgerenciar_transportes.html#a66811581d0e54de4b4e0c6aaec38fc02">gerenciarTransportes</a>(): transportes(<a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>(<span class="stringliteral">&quot;&quot;</span>,0.0,NotFound)){};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classgerenciar_transportes.html#a7482014a99be8846a3b178639a737018">showTransportes</a>();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classgerenciar_transportes.html#a5fcf61b59fb9afd04b5edd544039a525">adicionarTransporte</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>&amp; t);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classgerenciar_transportes.html#a7e76b7ac06a959819d769a803bd039ef">removerTransporte</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>&amp; t);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classgerenciar_transportes.html#a015934710881cb3edd268ac76df3d15a">procurarTransporte</a>();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classgerenciar_transportes.html#ae353bc5af54e88cfc25bd11e36b72e08">inputTransporte</a>(<a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a>&amp; t);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classgerenciar_transportes.html#a0abb234cb958a6d9903e6d8df4939f07">showTransporteMaisProximo</a>();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classgerenciar_transportes.html#a5488e8128c082f7b42a80bb21230730a">showTransporte</a>(<a class="code hl_class" href="class_transp_terrestre.html">TranspTerrestre</a> t);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_class" href="class_b_s_t.html">BST&lt;TranspTerrestre&gt;</a>&amp; <a class="code hl_function" href="classgerenciar_transportes.html#ad0982e871b258fc77294a976f0dca253">getTransportesBST</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif </span><span class="comment">//PROJECT_GERENCIARTRANSPORTES_H</span></div>
+<div class="ttc" id="abst_8h_html"><div class="ttname"><a href="bst_8h.html">bst.h</a></div></div>
 <div class="ttc" id="aclass_b_s_t_html"><div class="ttname"><a href="class_b_s_t.html">BST</a></div><div class="ttdef"><b>Definition:</b> bst.h:31</div></div>
 <div class="ttc" id="aclass_transp_terrestre_html"><div class="ttname"><a href="class_transp_terrestre.html">TranspTerrestre</a></div><div class="ttdef"><b>Definition:</b> transpTerrestre.h:6</div></div>
 <div class="ttc" id="aclassgerenciar_transportes_html"><div class="ttname"><a href="classgerenciar_transportes.html">gerenciarTransportes</a></div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.h:15</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a015934710881cb3edd268ac76df3d15a"><div class="ttname"><a href="classgerenciar_transportes.html#a015934710881cb3edd268ac76df3d15a">gerenciarTransportes::procurarTransporte</a></div><div class="ttdeci">bool procurarTransporte()</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:43</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a0abb234cb958a6d9903e6d8df4939f07"><div class="ttname"><a href="classgerenciar_transportes.html#a0abb234cb958a6d9903e6d8df4939f07">gerenciarTransportes::showTransporteMaisProximo</a></div><div class="ttdeci">void showTransporteMaisProximo()</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:32</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a5488e8128c082f7b42a80bb21230730a"><div class="ttname"><a href="classgerenciar_transportes.html#a5488e8128c082f7b42a80bb21230730a">gerenciarTransportes::showTransporte</a></div><div class="ttdeci">void showTransporte(TranspTerrestre t)</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:37</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a5fcf61b59fb9afd04b5edd544039a525"><div class="ttname"><a href="classgerenciar_transportes.html#a5fcf61b59fb9afd04b5edd544039a525">gerenciarTransportes::adicionarTransporte</a></div><div class="ttdeci">bool adicionarTransporte(const TranspTerrestre &amp;t)</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:24</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a66811581d0e54de4b4e0c6aaec38fc02"><div class="ttname"><a href="classgerenciar_transportes.html#a66811581d0e54de4b4e0c6aaec38fc02">gerenciarTransportes::gerenciarTransportes</a></div><div class="ttdeci">gerenciarTransportes()</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.h:22</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a7482014a99be8846a3b178639a737018"><div class="ttname"><a href="classgerenciar_transportes.html#a7482014a99be8846a3b178639a737018">gerenciarTransportes::showTransportes</a></div><div class="ttdeci">void showTransportes()</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:12</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_a7e76b7ac06a959819d769a803bd039ef"><div class="ttname"><a href="classgerenciar_transportes.html#a7e76b7ac06a959819d769a803bd039ef">gerenciarTransportes::removerTransporte</a></div><div class="ttdeci">bool removerTransporte(const TranspTerrestre &amp;t)</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:28</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_ad0982e871b258fc77294a976f0dca253"><div class="ttname"><a href="classgerenciar_transportes.html#ad0982e871b258fc77294a976f0dca253">gerenciarTransportes::getTransportesBST</a></div><div class="ttdeci">BST&lt; TranspTerrestre &gt; &amp; getTransportesBST()</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:7</div></div>
+<div class="ttc" id="aclassgerenciar_transportes_html_ae353bc5af54e88cfc25bd11e36b72e08"><div class="ttname"><a href="classgerenciar_transportes.html#ae353bc5af54e88cfc25bd11e36b72e08">gerenciarTransportes::inputTransporte</a></div><div class="ttdeci">void inputTransporte(TranspTerrestre &amp;t)</div><div class="ttdef"><b>Definition:</b> gerenciarTransportes.cpp:74</div></div>
+<div class="ttc" id="adefs_8h_html"><div class="ttname"><a href="defs_8h.html">defs.h</a></div></div>
+<div class="ttc" id="ainput_8h_html"><div class="ttname"><a href="input_8h.html">input.h</a></div></div>
+<div class="ttc" id="atransp_terrestre_8h_html"><div class="ttname"><a href="transp_terrestre_8h.html">transpTerrestre.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
